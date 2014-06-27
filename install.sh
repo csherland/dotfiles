@@ -37,12 +37,10 @@ brew cask install vlc
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
 
-# Solarized color scheme (also awesome)
-
-
 # Oh-my-zsh and zshrc
 curl -L http://install.ohmyz.sh | sh
 sudo chsh -s $(whoami) $(which zsh)
+rm ~/.zshrc
 ln -s ~/.zshrc ~/.dotfiles/zshrc
 source ~/.zshrc
 
