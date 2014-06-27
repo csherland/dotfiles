@@ -70,8 +70,9 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " Moving between buffers
-nmap <C-n> :bnext<CR>
-nmap <C-p> :bprev<CR>
+nmap <C-e> :bnext<CR>
+nmap <C-w> :bprev<CR>
+nmap <C-x> :bd<CR>
 
 " Options dealing with search
 set incsearch
@@ -129,6 +130,12 @@ set noswapfile
 vnoremap > >gv
 vnoremap < <gv
 
+" Navigating between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " This will save a lot of time
 nnoremap ; :
 
@@ -153,7 +160,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>fw :FixWhitespace<CR>
 
 " NERDTree
-nmap <silent> <leader>nt :NERDTreeToggle<CR>
+"nmap <silent> <leader>nt :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
 " Syntastic
 function! ToggleErrors()
