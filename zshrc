@@ -33,3 +33,8 @@ source $ZSH/oh-my-zsh.sh
 # Path variables
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH=/usr/local/bin:$PATH
+
+# Custom functions
+function lcd () {
+  cd "$@" && ls
+}
