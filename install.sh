@@ -41,13 +41,13 @@ brew cask install font-inconsolata-dz-for-powerline
 curl -L http://install.ohmyz.sh | sh
 sudo chsh -s $(whoami) $(which zsh)
 rm ~/.zshrc
-ln -s ~/.zshrc ~/.dotfiles/zshrc
+ln -s ~/.dotfiles/zshrc ~/.zshrc
 source ~/.zshrc
 
 # vimrc
 mkdir ~/.vim
-ln -s ~/.vim/vimrc ~/.dotfiles/vimrc
-ln -s ~/.vimrc ~/.vim/vimrc
+ln -s ~/.dotfiles/vimrc ~/.vim/vimrc 
+ln -s ~/.vim/vimrc ~/.vimrc 
 
 # Vim setup
 vim +PluginInstall +qall
@@ -56,5 +56,5 @@ cd ~/.vim/bundle/YouCompleteMe
 cd ~
 
 # Global gitignore
-ln -s ~/.gitignore_global ~/.dotfiles/gitignore_global
+ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global 
 git config --global core.excludesfile '~/.gitignore'
