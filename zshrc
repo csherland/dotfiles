@@ -27,15 +27,12 @@ alias cl=clear
 alias vim='mvim -v'
 
 # Specify plugins for ZSH
-plugins=(git, brew, osx, zsh-syntax-highlighting)
+plugins=(git, brew, osx)
 source $ZSH/oh-my-zsh.sh
 
 # Path variables
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH=/usr/local/bin:$PATH
-
-# Enable highlighters
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Custom functions
 function lcd () {
