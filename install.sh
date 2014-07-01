@@ -21,6 +21,7 @@ source ~/.bashrc
 # Required brew utilities
 brew install caskroom/cask/brew-cask
 brew install git
+brew install wget
 brew install macvim
 brew install zsh
 

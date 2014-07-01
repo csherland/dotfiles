@@ -41,3 +41,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 function lcd () {
   cd "$@" && ls
 }
+
+# Set keybindings for vim mode by default
+bindkey -v
