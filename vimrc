@@ -131,6 +131,12 @@ set noswapfile
 vnoremap > >gv
 vnoremap < <gv
 
+" Anti-temptation
+ino <Up> <NOP>
+ino <Right> <NOP>
+ino <Down> <NOP>
+ino <Left> <NOP>
+
 " Navigating between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -145,9 +151,6 @@ set mouse=a
 
 " Set the terminals title
 set title
-
-" Center of screen cursor (might get rid of this)
-set scrolloff=9999
 
 " ADD FILE-TYPE
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
