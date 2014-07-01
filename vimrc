@@ -146,6 +146,9 @@ set mouse=a
 " Set the terminals title
 set title
 
+" Center of screen cursor (might get rid of this)
+set scrolloff=9999
+
 " ADD FILE-TYPE
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
