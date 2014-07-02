@@ -47,8 +47,8 @@ source ~/.zshrc
 
 # vimrc
 mkdir ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vim/vimrc 
-ln -s ~/.vim/vimrc ~/.vimrc 
+ln -s ~/.dotfiles/vimrc ~/.vim/vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 
 # Vim setup
 vim +PluginInstall +qall
@@ -57,5 +57,5 @@ cd ~/.vim/bundle/YouCompleteMe
 cd ~
 
 # Global gitignore
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global 
+ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'

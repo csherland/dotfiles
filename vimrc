@@ -132,10 +132,10 @@ vnoremap > >gv
 vnoremap < <gv
 
 " Anti-temptation
-ino <Up> <NOP>
-ino <Right> <NOP>
-ino <Down> <NOP>
-ino <Left> <NOP>
+"ino <Up> <NOP>
+"ino <Right> <NOP>
+"ino <Down> <NOP>
+"ino <Left> <NOP>
 
 " Navigating between splits
 nnoremap <C-J> <C-W><C-J>
