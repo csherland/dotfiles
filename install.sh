@@ -18,12 +18,13 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 echo export PATH='/usr/local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
-# Required brew utilities
+# Brew utilities
 brew install caskroom/cask/brew-cask
 brew install git
 brew install wget
 brew install macvim
 brew install zsh
+brew install htop
 
 # Some useful casks (non app-store apps)
 brew cask install adium
@@ -59,3 +60,7 @@ cd ~
 # Global gitignore
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'
+
+# Configure htop to display information properly
+sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
+sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
