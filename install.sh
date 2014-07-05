@@ -33,6 +33,7 @@ brew cask install dropbox
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install spotify
+brew cask install steam
 brew cask install vlc
 
 # Inconsolata font because it is awesome
