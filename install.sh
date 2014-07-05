@@ -62,6 +62,10 @@ cd ~
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'
 
+# Config git user
+git config --global user.name "Christian"
+git config --global user.email christiansherland@gmail.com
+
 # Configure htop to display information properly
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
