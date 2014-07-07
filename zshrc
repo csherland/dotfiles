@@ -23,9 +23,10 @@ export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;33'
 
 # Aliases
-alias cl=clear
+alias cl='clear'
 alias vim='mvim -v'
 alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 # Specify plugins for ZSH
 plugins=(git, brew, osx)
