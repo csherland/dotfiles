@@ -25,6 +25,7 @@ export GREP_COLOR='3;33'
 # Aliases
 alias cl=clear
 alias vim='mvim -v'
+alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
 
 # Specify plugins for ZSH
 plugins=(git, brew, osx)
@@ -41,3 +42,4 @@ function lcd () {
 
 # Set keybindings for vim mode by default
 bindkey -v
+
