@@ -82,6 +82,9 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Show the 80th column
+set colorcolumn=80
+
 " Default encoding
 set encoding=utf-8
 

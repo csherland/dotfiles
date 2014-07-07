@@ -6,7 +6,7 @@ setup all included dotfiles.
 
 Usage
 -----
-To install all components, as well as a small selection of required packages run
+To install all components, as well as a small selection of required packages run:
 
     git clone http://github.com/csherland/dotfiles ~/.dotfiles && ~/.dotfiles/install.sh
 
@@ -15,7 +15,7 @@ Installed Utilities/Applications
 The provided instalation script installs a number of useful applications and utilities. First and
 foremost is the Homebrew package manager for mac which is used to install the remaining applications.
 
-####Command line utilities:####
+####Command line utilities:
   - brew-cask
   - git
   - htop
@@ -23,7 +23,7 @@ foremost is the Homebrew package manager for mac which is used to install the re
   - wget
   - zsh
 
-####Mac applications:####
+####Mac applications:
   - Adium
   - Atom
   - Dropbox
