@@ -21,10 +21,10 @@ source ~/.bashrc
 # Brew utilities
 brew install caskroom/cask/brew-cask
 brew install git
-brew install wget
-brew install macvim
-brew install zsh
 brew install htop
+brew install macvim
+brew install wget
+brew install zsh
 
 # Some useful casks (non app-store apps)
 brew cask install adium
