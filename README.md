@@ -16,25 +16,25 @@ The provided instalation script installs a number of useful applications and uti
 foremost is the Homebrew package manager for mac which is used to install the remaining applications.
 
 ####Command line utilities:
-      - brew-cask
-      - git
-      - htop
-      - macvim
-      - wget
-      - zsh
+    - brew-cask
+    - git
+    - htop
+    - macvim
+    - wget
+    - zsh
 
 ####Mac applications:
-      - Adium
-      - Atom
-      - Dropbox
-      - Flux
-      - Google-chrome
-      - Handbrake
-      - Iterm2
-      - Skype
-      - Spotify
-      - Steam
-      - VLC
+    - Adium
+    - Atom
+    - Dropbox
+    - Flux
+    - Google-chrome
+    - Handbrake
+    - Iterm2
+    - Skype
+    - Spotify
+    - Steam
+    - VLC
 
 License
 -------
