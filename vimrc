@@ -66,14 +66,12 @@ nmap k gk
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $
-
-" $/^ doesn't do anything
 nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " Moving between buffers
-nmap <C-e> :bnext<CR>
-nmap <C-w> :bprev<CR>
+nmap <C-]> :bnext<CR>
+nmap <C-[> :bprev<CR>
 nmap <C-x> :bd<CR>
 
 " Options dealing with search
@@ -95,7 +93,7 @@ set cursorline
 set hidden
 
 " Clear the search buffer
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Show command in bottom bar
 set showcmd
@@ -135,12 +133,6 @@ set noswapfile
 vnoremap > >gv
 vnoremap < <gv
 
-" Anti-temptation
-"ino <Up> <NOP>
-"ino <Right> <NOP>
-"ino <Down> <NOP>
-"ino <Left> <NOP>
-
 " Navigating between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -171,7 +163,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>fw :FixWhitespace<CR>
 
 " NERDTree
-"nmap <silent> <leader>nt :NERDTreeToggle<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 
 " Syntastic
