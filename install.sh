@@ -10,7 +10,7 @@
 #   full description of what is installed in this script.
 #
 
-# CD to home for good measure
+# Change to home directory for good measure
 cd ~
 
 # Homebrew! (and related setup)
@@ -39,7 +39,7 @@ brew cask install spotify
 brew cask install steam
 brew cask install vlc
 
-# Inconsolata font because it is awesome
+# Inconsolata font, because it's awesome
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
 
@@ -65,11 +65,11 @@ cd ~
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'
 
-# Config git user
+# Configure git user
 git config --global user.name "Christian"
 git config --global user.email christiansherland@gmail.com
 
-# Configure htop to display information properly
+# Configure htop to display information properly (requires sudo)
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 
