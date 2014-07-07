@@ -72,3 +72,6 @@ git config --global user.email christiansherland@gmail.com
 # Configure htop to display information properly
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
+
+# Configure location of iterm2 preferences
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/"
