@@ -61,6 +61,9 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 cd ~
 
+# Configure location of iterm2 preferences
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/"
+
 # Global gitignore
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'
@@ -73,5 +76,3 @@ git config --global user.email christiansherland@gmail.com
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 
-# Configure location of iterm2 preferences
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/"
