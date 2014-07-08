@@ -70,8 +70,8 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " Moving between buffers
-nmap <C-]> :bnext<CR>
-nmap <C-[> :bprev<CR>
+nmap <C-w> :bnext<CR>
+nmap <C-q> :bprev<CR>
 nmap <C-x> :bd<CR>
 
 " Options dealing with search
