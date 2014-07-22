@@ -152,6 +152,9 @@ set title
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
 
+" No wrap in css
+au BufEnter *.css set nowrap
+
 " Forgot to sudo? No problem!
 cmap w!! w !sudo tee % >/dev/null
 
