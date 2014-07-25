@@ -68,7 +68,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfil
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile '~/.gitignore'
 
-# Configure git user
+# Configure git user (You will likely want to change this)
 git config --global user.name "Christian"
 git config --global user.email christiansherland@gmail.com
 

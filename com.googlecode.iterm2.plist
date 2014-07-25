@@ -417,7 +417,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>462 582 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1277 252 1274 926 -1280 176 1280 1002 </string>
+	<string>-1659 184 1522 986 -1280 176 1280 1002 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -983,7 +983,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1127,7 +1127,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1210,7 +1210,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-07-16T12:54:43Z</date>
+	<date>2014-07-24T17:55:53Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1258,6 +1258,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140629</string>
+	<string>2.0</string>
 </dict>
 </plist>
