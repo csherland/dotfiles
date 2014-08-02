@@ -13,6 +13,9 @@ sudo apt-get install build-essential
 sudo apt-get install python-dev
 sudo apt-get install cmake
 sudo apt-get install g++
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo apt-get install zsh
 
 # Setup vimrc and install plugins
 mkdir ~/.vim
@@ -25,6 +28,8 @@ cd ~/.vim/bundle/YouCompleteMe
 cd ~
 
 # ZSH and Oh-My-Zsh + zsh configuration
+curl -L http://install.ohmyz.sh | sh
+ln -s ~/.dotfiles/zshrc ~/.zshrc
 
 # Fonts
 
