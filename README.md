@@ -10,6 +10,14 @@ To install all components, as well as a small selection of required packages run
 
     git clone http://github.com/csherland/dotfiles ~/.dotfiles && ~/.dotfiles/install.sh
 
+Included Files
+--------------
+Along with the install script, this repository includes the following files:
+    - gitignore_global
+    - vimrc
+    - zshrc
+    - com.googlecode.iterm2.plist
+
 Installed Utilities/Applications
 --------------------------------
 The provided instalation script installs a number of useful applications and
