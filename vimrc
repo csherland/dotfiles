@@ -31,8 +31,8 @@ Plugin 'bling/vim-bufferline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -64,6 +64,9 @@ set nofoldenable
 " Fix wrapping behavior when moving
 nmap j gj
 nmap k gk
+
+" Fix performance on long lines
+au BufNewFile,BufRead *.css set synmaxcol=120
 
 " move to beginning/end of line
 nnoremap B ^

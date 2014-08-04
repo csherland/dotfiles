@@ -41,7 +41,3 @@ export PATH=/usr/local/bin:$PATH
 function lcd () {
   cd "$@" && ls
 }
-
-# Set keybindings for vim mode by default
-bindkey -v
-
