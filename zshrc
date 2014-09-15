@@ -27,10 +27,13 @@ alias cl='clear'
 alias vim='mvim -v'
 alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+# Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
+alias art='cd ~/Developer/tesla-repos/wsj/article.app'
 
 # Specify plugins for ZSH
-plugins=(git, brew, osx)
+plugins=(git, brew, osx, zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Path variables
