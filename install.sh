@@ -76,3 +76,5 @@ git config --global user.email christiansherland@gmail.com
 sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
 
+# Install NPM packages
+npm install -g jshint
