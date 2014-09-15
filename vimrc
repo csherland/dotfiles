@@ -31,6 +31,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdcommenter'
@@ -187,6 +188,7 @@ nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 nmap <silent> <leader>stm :SyntasticToggleMode<CR>
 let g:syntastic_enable_signs=1
 highlight SyntasticErrorSign guifg=white guibg=red
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Airline
 set laststatus=2
