@@ -112,14 +112,21 @@ set number
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set backspace=indent,eol,start
 set autoindent
 set smartindent
 set copyindent
 set showmatch
 set smarttab
+
+function! setAltPrefs()
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
 
 " Set information on history
 set history=1000
@@ -154,9 +161,10 @@ set mouse=a
 " Set the terminals title
 set title
 
-" ADD FILE-TYPE
+" Add file-type specific options
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
+autocmd FileType xml, html, xhtml, javascript call setAltPrefs()
 
 " No wrap in css
 au BufEnter *.css set nowrap
