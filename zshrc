@@ -31,6 +31,8 @@ alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resour
 # Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
 alias art='cd ~/Developer/tesla-repos/wsj/article.app'
+alias sfr='cd ~/Developer/tesla-repos/wsj/resp.section.resources'
+alias sfp='cd ~/Developer/tesla-repos/wsj/resp.section.pages'
 
 # Specify plugins for ZSH
 plugins=(git, brew, osx, zsh-syntax-highlighting)
