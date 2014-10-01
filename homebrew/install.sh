@@ -12,6 +12,29 @@ then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
 fi
 
-# Install homebrew packages
+# Brew utilities
+brew install caskroom/cask/brew-cask
+brew install git
+brew install htop
+brew install macvim --override-system-vim
+brew install wget
+brew install zsh
+
+# Some useful casks (non app-store apps)
+brew cask install adium
+brew cask install atom
+brew cask install dropbox
+brew cask install flux
+brew cask install google-chrome
+brew cask install handbrake
+brew cask install iterm2
+brew cask install skype
+brew cask install spotify
+brew cask install steam
+brew cask install vlc
+
+# Inconsolata font, because it's awesome
+brew tap caskroom/fonts
+brew cask install font-inconsolata-dz-for-powerline
 
 exit 0
