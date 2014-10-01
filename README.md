@@ -67,6 +67,17 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 Authors
 -------
 - Christian Sherland
+
+Acknowledgments
+---------------
+A huge ammount of inspiration for the organization of this project (as well as
+a few useful scripts) was taken from [Zack Holman's dotfiles](https://github.com/holman/dotfiles).
+
+Additionally, the mac defaults script in this repo is a modified version of 
+[Mathias Bynens' script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx).
+
+
