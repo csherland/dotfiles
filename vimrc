@@ -112,9 +112,9 @@ set number
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 set autoindent
 set smartindent
@@ -122,11 +122,11 @@ set copyindent
 set showmatch
 set smarttab
 
-function! setAltPrefs()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
-endfunction
+"function! setAltPrefs()
+    "set tabstop=2
+    "set softtabstop=2
+    "set shiftwidth=2
+"endfunction
 
 " Set information on history
 set history=1000
