@@ -112,9 +112,9 @@ set number
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 set autoindent
 set smartindent
@@ -122,10 +122,10 @@ set copyindent
 set showmatch
 set smarttab
 
-function! setAltPrefs()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
+function! SetAltPrefs()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
 endfunction
 
 " Set information on history
@@ -164,7 +164,7 @@ set title
 " Add file-type specific options
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
-autocmd FileType xml, html, xhtml, javascript call setAltPrefs()
+autocmd filetype xml, html, xhtml, javascript call setAltPrefs()
 
 " No wrap in css
 au BufEnter *.css set nowrap
@@ -197,6 +197,7 @@ nmap <silent> <leader>stm :SyntasticToggleMode<CR>
 let g:syntastic_enable_signs=1
 highlight SyntasticErrorSign guifg=white guibg=red
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_args ="--config ~/.jshintrc"
 
 " Airline
 set laststatus=2

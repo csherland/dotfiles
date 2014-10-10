@@ -27,6 +27,8 @@ alias cl='clear'
 alias vim='mvim -v'
 alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias gd='git diff HEAD~1 HEAD'
+alias ll='ls | awk "{ print $1 }"'
 
 # Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
@@ -35,12 +37,12 @@ alias sfr='cd ~/Developer/tesla-repos/wsj/resp.section.resources'
 alias sfp='cd ~/Developer/tesla-repos/wsj/resp.section.pages'
 
 # Specify plugins for ZSH
-plugins=(git, brew, osx, zsh-syntax-highlighting)
+plugins=(git, brew, osx)
 source $ZSH/oh-my-zsh.sh
 
 # Path variables
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin":$PATH
 
 # Custom functions
 function lcd () {
