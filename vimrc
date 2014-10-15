@@ -128,6 +128,9 @@ function! SetAltPrefs()
   set shiftwidth=2
 endfunction
 
+" Copy to clipboard
+map <C-c> "+y<CR>
+
 " Set information on history
 set history=1000
 set undolevels=1000
