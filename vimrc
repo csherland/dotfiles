@@ -46,7 +46,6 @@ if hasVundle == 0
   :PluginInstall
 endif
 
-
 " Better color stuff
 syntax enable
 set background=dark
@@ -61,7 +60,7 @@ nnoremap ; :
 nmap j gj
 nmap k gk
 
-" ANTI-TEMPTATION
+" ANTI-TEMPTATION (need to figure something better out for up + down)
 ino <Up> <NOP>
 ino <Right> <NOP>
 ino <Down> <NOP>
@@ -99,9 +98,9 @@ set wildmenu
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set backspace=indent,eol,start
 set autoindent
 set smartindent
