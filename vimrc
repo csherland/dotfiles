@@ -35,7 +35,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin indent on
