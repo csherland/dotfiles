@@ -4,10 +4,8 @@
 "
 "
 
-" Handle some basic stuff to enable plugins
+" Use vim - no vi defaults
 set nocompatible
-syntax on
-filetype off
 
 " Setting up Vundle - the vim plugin bundler
 let hasVundle=1
@@ -20,27 +18,27 @@ if !filereadable(vundle_readme)
   let hasVundle=0
 endif
 
+" Vundle plugin management
+filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Plugins
+call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'Yggdroot/indentLine'
+call vundle#end()
+filetype plugin indent on
 
 " ...All your other bundles...
 if hasVundle == 0
@@ -49,25 +47,26 @@ if hasVundle == 0
   :PluginInstall
 endif
 
-filetype plugin indent on
 
 " Better color stuff
+syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_contrast = "high"
 
-" Map leader to comma
+" Time savers
 let mapleader=","
-
-" No folding
-set nofoldenable
+nnoremap ; :
 
 " Fix wrapping behavior when moving
 nmap j gj
 nmap k gk
 
-" Fix performance on long lines
-au BufNewFile,BufRead *.css set synmaxcol=120
+" ANTI-TEMPTATION
+ino <Up> <NOP>
+ino <Right> <NOP>
+ino <Down> <NOP>
+ino <Left> <NOP>
 
 " move to beginning/end of line
 nnoremap B ^
@@ -79,36 +78,25 @@ nnoremap ^ <nop>
 nmap <C-m> :bnext<CR>
 nmap <C-b> :bprev<CR>
 nmap <C-x> :bd<CR>
+set hidden  " Switch buffers without saving
 
 " Options dealing with search
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-
-" Show the 80th column
-set colorcolumn=80
-
-" Default encoding
-set encoding=utf-8
-
-" Highlight current line
-set cursorline
-
-" For switching between buffers without saving
-set hidden
-
-" Clear the search buffer
 nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Location highlighting
+set colorcolumn=80
+set cursorline
+set number          " Line numbers
+set ruler           " Column number
+set encoding=utf-8  " Default UTF-8 encoding
 
 " Show command in bottom bar
 set showcmd
-
-" Visual autocomplete for command menu
 set wildmenu
-
-" Line numbers
-set number
 
 " Some editing preferences (tabs,  etc)
 set expandtab
@@ -121,6 +109,7 @@ set smartindent
 set copyindent
 set showmatch
 set smarttab
+set nofoldenable
 
 function! SetAltPrefs()
   set tabstop=2
@@ -155,29 +144,22 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" This will save a lot of time
-nnoremap ; :
-
 " Enable the use of the mouse
 set mouse=a
-
-" Set the terminals title
-set title
 
 " Add file-type specific options
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
-autocmd filetype xml, html, xhtml, javascript call setAltPrefs()
-
-" No wrap in css
+au BufNewFile,BufRead *.css set synmaxcol=120
 au BufEnter *.css set nowrap
+autocmd filetype xml, html, xhtml, javascript call setAltPrefs()
 
 " Forgot to sudo? No problem!
 cmap w!! w !sudo tee % >/dev/null
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
 " Easy mapping to kill trailing whitespace
 nmap <silent> <leader>fw :FixWhitespace<CR>
@@ -194,17 +176,16 @@ function! ToggleErrors()
     Errors
   endif
 endfunction
-
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
+
 nmap <silent> <leader>stm :SyntasticToggleMode<CR>
-let g:syntastic_enable_signs=1
 highlight SyntasticErrorSign guifg=white guibg=red
+let g:syntastic_enable_signs=1
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_args ="--config ~/.jshintrc"
 
 " Airline
 set laststatus=2
-set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1
@@ -220,16 +201,6 @@ nmap <silent> <leader>gc :Gcommit<CR>
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gl :Glog<CR>
 nmap <silent> <leader>gp :Git push<CR>
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Weird colors for gitgutter, etc
 hi clear SignColumn
