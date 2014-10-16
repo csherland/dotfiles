@@ -164,7 +164,7 @@ set title
 " Add file-type specific options
 au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
-autocmd FileType xml, html, xhtml, javascript call setAltPrefs()
+"autocmd FileType xml, html, xhtml, javascript call setAltPrefs()
 
 " No wrap in css
 au BufEnter *.css set nowrap
