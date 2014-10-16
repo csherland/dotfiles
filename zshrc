@@ -41,8 +41,7 @@ plugins=(git, brew, osx)
 source $ZSH/oh-my-zsh.sh
 
 # Path variables
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/bin":$PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Custom functions
 function lcd () {
