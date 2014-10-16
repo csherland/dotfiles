@@ -122,11 +122,14 @@ set copyindent
 set showmatch
 set smarttab
 
-"function! setAltPrefs()
-    "set tabstop=2
-    "set softtabstop=2
-    "set shiftwidth=2
-"endfunction
+function! SetAltPrefs()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endfunction
+
+" Copy to clipboard
+map <C-c> "+y<CR>
 
 " Set information on history
 set history=1000
@@ -197,6 +200,7 @@ nmap <silent> <leader>stm :SyntasticToggleMode<CR>
 let g:syntastic_enable_signs=1
 highlight SyntasticErrorSign guifg=white guibg=red
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_args ="--config ~/.jshintrc"
 
 " Airline
 set laststatus=2
