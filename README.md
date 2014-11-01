@@ -20,6 +20,7 @@ If you have not already done so, install the tools by running:
 Included Files
 --------------
 Along with the install script, this repository includes the following files:
+
     - gitignore_global
     - vimrc
     - zshrc
