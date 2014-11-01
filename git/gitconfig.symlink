@@ -1,13 +1,13 @@
 [hub]
-        protocol = https
+  protocol = https
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-    excludesfile = ~/.gitignore
-    editor = mvim -v
+  excludesfile = ~/.gitignore
+  editor = mvim -v
 [user]
 	name = Christian
 	email = christiansherland@gmail.com
