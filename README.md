@@ -1,4 +1,4 @@
-Christian Sherland Dotfiles
+Christian Sherland's Dotfiles
 ==========================
 A compliation of my OSX dotfiles including an installation script. Running the
 installation script will install all required utilities as well as some useful
