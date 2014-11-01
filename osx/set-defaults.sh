@@ -16,9 +16,6 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
-# Always open everything in Finder's list view. This is important.
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
-
 # Show remaining batter percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
