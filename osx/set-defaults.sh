@@ -22,6 +22,9 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+# Change where screenshots are saved
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
+
 # Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true

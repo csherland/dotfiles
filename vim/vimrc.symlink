@@ -98,9 +98,9 @@ set wildmenu
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 set autoindent
 set smartindent
@@ -150,7 +150,6 @@ au BufNewFile,BufRead *.mu set filetype=html syntax=mustache
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.css set synmaxcol=120
 au BufEnter *.css set nowrap
-autocmd filetype xml, html, xhtml, javascript call setAltPrefs()
 
 " Forgot to sudo? No problem!
 cmap w!! w !sudo tee % >/dev/null
