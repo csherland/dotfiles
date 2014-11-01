@@ -8,7 +8,9 @@ Usage
 -----
 To install all components, as well as a small selection of required packages run:
 
-    git clone http://github.com/csherland/dotfiles ~/.dotfiles && ~/.dotfiles/install.sh
+    git clone http://github.com/csherland/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    install/bootstrap
 
 Included Files
 --------------
