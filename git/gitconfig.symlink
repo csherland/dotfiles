@@ -1,3 +1,10 @@
-[user]
-	name = Christian
-	email = christiansherland@gmail.com
+[hub]
+        protocol = https
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    editor = mvim -v
