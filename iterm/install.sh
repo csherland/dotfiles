@@ -5,5 +5,5 @@
 #
 
 # Configure location of iterm2 preferences
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/"
-
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder true
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/iterm"
