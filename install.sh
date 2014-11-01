@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# install.sh
+# bootstrap
 #   Manages installation of my dotfiles
 #
 

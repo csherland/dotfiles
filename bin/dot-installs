@@ -16,3 +16,4 @@ $ZSH/homebrew/install.sh 2>&1
 $ZSH/iterm/install.sh 2>&1
 $ZSH/npm/install.sh 2>&1
 $ZSH/vim/install.sh 2>&1
+$ZSH/zsh/install.sh 2>&1
