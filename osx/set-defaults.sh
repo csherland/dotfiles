@@ -19,6 +19,26 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
+# Show remaining batter percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Enable tap to click (Trackpad) for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Enable iTunes track notifications in the Dock
+defaults write com.apple.dock itunes-notifications -bool true
+
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
