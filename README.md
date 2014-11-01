@@ -1,5 +1,5 @@
-Dotfiles
-========
+Christian Sherland Dotfiles
+==========================
 A compliation of my OSX dotfiles including an installation script. Running the
 installation script will install all required utilities as well as some useful
 applications, and will then configure and setup all included dotfiles.
@@ -8,7 +8,9 @@ Usage
 -----
 To install all components, as well as a small selection of required packages run:
 
-    git clone http://github.com/csherland/dotfiles ~/.dotfiles && ~/.dotfiles/install.sh
+    git clone http://github.com/csherland/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    install/bootstrap
 
 Included Files
 --------------
@@ -22,7 +24,7 @@ Installed Utilities/Applications
 --------------------------------
 The provided instalation script installs a number of useful applications and
 utilities. First and foremost is the Homebrew package manager for mac which is
-used to install the remaining applications.
+used to install the tools and applications listed below.
 
 ####Command line utilities:
     - brew-cask
@@ -67,6 +69,17 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 Authors
 -------
 - Christian Sherland
+
+Acknowledgments
+---------------
+A huge ammount of inspiration for the organization of this project (as well as
+a few useful scripts) was taken from [Zack Holman's dotfiles](https://github.com/holman/dotfiles).
+
+Additionally, the mac defaults script in this repo is a modified version of 
+[Mathias Bynens' script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx).
+
+
