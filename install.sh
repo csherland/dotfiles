@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #
 # install.sh
 #   Manages installation of my dotfiles
@@ -153,26 +152,6 @@ then
     fail "error installing dependencies"
   fi
 fi
-
-# Install oh-my-zsh
-
-# Configure location of iterm2 preferences
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/$(whoami)/.dotfiles/"
-
-# Global gitignore
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
-git config --global core.excludesfile '~/.gitignore'
-
-# Configure git user (You will likely want to change this)
-git config --global user.name "Christian"
-git config --global user.email christiansherland@gmail.com
-
-# Configure htop to display information properly (requires sudo)
-sudo chown root:wheel /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
-sudo chmod u+s /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop
-
-# Install NPM packages
-npm install -g jshint
 
 echo ''
 echo '  All installed!'
