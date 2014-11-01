@@ -12,8 +12,8 @@ export ZSH=$HOME/.dotfiles
 $ZSH/osx/set-defaults.sh
 
 # Run install scripts
-$ZSH/homebrew/install.sh 2>&1
-$ZSH/iterm/install.sh 2>&1
-$ZSH/npm/install.sh 2>&1
-$ZSH/vim/install.sh 2>&1
-$ZSH/zsh/install.sh 2>&1
+$ZSH/homebrew/install.sh
+$ZSH/iterm/install.sh
+$ZSH/npm/install.sh
+$ZSH/vim/install.sh
+$ZSH/zsh/install.sh

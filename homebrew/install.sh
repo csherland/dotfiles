@@ -10,7 +10,7 @@
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Brew utilities
@@ -18,6 +18,7 @@ brew install caskroom/cask/brew-cask
 brew install git
 brew install htop
 brew install macvim --override-system-vim
+brew install node
 brew install wget
 brew install zsh
 

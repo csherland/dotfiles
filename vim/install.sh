@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # vim/install.sh
 #   Installs all my vim plugins

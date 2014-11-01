@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # bootstrap
 #   Manages installation of my dotfiles
@@ -127,7 +127,7 @@ link_file () {
 }
 
 install_dotfiles () {
-  info 'installing dotfiles'
+  info "installing dotfiles"
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -145,7 +145,7 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if source bin/dot-installs > /tmp/dotfiles-dot 2>&1
+  if source bin/dot-installs
   then
     success "dependencies installed"
   else
