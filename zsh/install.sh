@@ -4,5 +4,5 @@
 #   install oh-my-zsh and set zsh as the default shell
 #
 
-curl -L http://install.ohmyz.sh | sh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 sudo chsh -s $(which zsh) $(whoami)
