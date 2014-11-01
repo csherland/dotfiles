@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+
 #
-# bootstrap installs things.
+# install.sh
+#   Manages installation of my dotfiles
+#
 
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd)
