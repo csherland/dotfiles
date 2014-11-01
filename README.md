@@ -12,7 +12,7 @@ To install all components, as well as a small selection of required packages run
     cd ~/.dotfiles
     install/bootstrap
 
-Note: Xcode command line tools are required for mac users to install these dotfiles.
+**Note**: Xcode command line tools are required for mac users to install these dotfiles.
 If you have not already done so, install the tools by running:
 
     xcode-select --install
