@@ -7,6 +7,7 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+# Ask for password upfront
 sudo -v
 
 # Set computer name (as done via System Preferences → Sharing)
@@ -40,6 +41,10 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 # Expand print panel by default
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
@@ -58,7 +63,7 @@ defaults write com.apple.dock itunes-notifications -bool true
 chflags nohidden ~/Library
 
 # Turn on firewall
-defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # Change where screenshots are saved
 defaults write com.apple.screencapture location ~/Pictures/Screenshots
