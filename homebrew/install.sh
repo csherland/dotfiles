@@ -27,7 +27,6 @@ brew cask install adium
 brew cask install atom
 brew cask install dropbox
 brew cask install flux
-brew cask install google-chrome
 brew cask install handbrake
 brew cask install iterm2
 brew cask install skype
