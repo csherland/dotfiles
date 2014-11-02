@@ -29,6 +29,7 @@ brew cask install dropbox
 brew cask install flux
 brew cask install handbrake
 brew cask install iterm2
+brew cask install seil
 brew cask install skype
 brew cask install spectacle
 brew cask install spotify
