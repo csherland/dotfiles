@@ -1,13 +1,12 @@
-# Sets reasonable OS X defaults.
 #
-# Or, in other words, set shit how I like in OS X.
+# set-defaults.sh
+#   Sets reasonable OS X defaults.
+#   The original idea (and a couple settings) were grabbed from:
+#     https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #
-# The original idea (and a couple settings) were grabbed from:
-#   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
-#
-# Run ./set-defaults.sh and you'll be good to go.
 
 # Ask for password upfront
+echo "Setting reasonable defaults for osx. Password required."
 sudo -v
 
 # Set computer name (as done via System Preferences → Sharing)
