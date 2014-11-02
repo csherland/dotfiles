@@ -7,11 +7,29 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+sudo -v
+
+# Set computer name (as done via System Preferences → Sharing)
+#sudo scutil --set ComputerName "higgis"
+#sudo scutil --set HostName "higgis"
+#sudo scutil --set LocalHostName "higgis"
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "higgis"
+
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
 defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Automatically illuminate keyboard in low light: on
+defaults write com.apple.BezelServices 'kDim' -bool true
+
+# Turn off when computer is not used for: 5 mins
+/usr/bin/defaults write com.apple.BezelServices 'kDimTime' -int 300
+
+# Caps lock -> no action (internal + external keyboards)
+defaults write 'com.apple.keyboard.modifiermapping.1452-566-0' -array '<dict><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
+defaults write 'com.apple.keyboard.modifiermapping.1452-544-0' -array '<dict><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
@@ -38,6 +56,9 @@ defaults write com.apple.dock itunes-notifications -bool true
 
 # Show the ~/Library folder.
 chflags nohidden ~/Library
+
+# Turn on firewall
+defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # Change where screenshots are saved
 defaults write com.apple.screencapture location ~/Pictures/Screenshots
