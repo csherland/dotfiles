@@ -95,6 +95,6 @@ defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.Web
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Don't allow guest access
-defaults write com.apple.loginwindow GuestEnabled -bool false
-defaults write com.apple.AppleFileServer guestAccess -bool false
-defaults write com.apple.smb.server AllowGuestAccess -bool false
+sudo defaults write com.apple.loginwindow GuestEnabled -bool false
+sudo defaults write com.apple.AppleFileServer guestAccess -bool false
+sudo defaults write com.apple.smb.server AllowGuestAccess -bool false
