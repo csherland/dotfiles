@@ -61,10 +61,10 @@ nmap j gj
 nmap k gk
 
 " ANTI-TEMPTATION (need to figure something better out for up + down)
-ino <Up> <NOP>
-ino <Right> <NOP>
-ino <Down> <NOP>
-ino <Left> <NOP>
+"ino <Up> <NOP>
+"ino <Right> <NOP>
+"ino <Down> <NOP>
+"ino <Left> <NOP>
 
 " move to beginning/end of line
 nnoremap B ^
@@ -98,9 +98,9 @@ set wildmenu
 
 " Some editing preferences (tabs,  etc)
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 set autoindent
 set smartindent
@@ -180,7 +180,6 @@ nmap <silent> <leader>stm :SyntasticToggleMode<CR>
 highlight SyntasticErrorSign guifg=white guibg=red
 let g:syntastic_enable_signs=1
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args ="--config ~/.jshintrc"
 
 " Airline
 set laststatus=2

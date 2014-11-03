@@ -28,13 +28,15 @@ alias vim='mvim -v'
 alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias gd='git diff HEAD~1 HEAD'
-alias ll='ls | awk "{ print $1 }"'
+alias gcm='git commit -m'
+alias lg='ls | grep';
 
 # Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
 alias art='cd ~/Developer/tesla-repos/wsj/article.app'
 alias sfr='cd ~/Developer/tesla-repos/wsj/resp.section.resources'
 alias sfp='cd ~/Developer/tesla-repos/wsj/resp.section.pages'
+alias dep='cd ~/Developer/resp.tool.deployment'
 
 # Specify plugins for ZSH
 plugins=(git, brew, osx)
