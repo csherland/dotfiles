@@ -11,3 +11,5 @@
 [user]
 	name = Christian
 	email = christian.sherland@dowjones.com
+[url "https://"]
+	insteadOf = git://

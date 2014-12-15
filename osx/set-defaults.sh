@@ -19,7 +19,7 @@ sudo -v
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Automatically illuminate keyboard in low light: on
 defaults write com.apple.BezelServices 'kDim' -bool true

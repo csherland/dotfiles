@@ -9,7 +9,7 @@
 # Check for Homebrew
 if test ! $(which brew)
 then
-  echo "  Installing Homebrew for you."
+  echo "Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -19,6 +19,7 @@ brew install git
 brew install htop
 brew install macvim --override-system-vim
 brew install node
+brew install the_silver_searcher
 brew install wget
 brew install zsh
 
