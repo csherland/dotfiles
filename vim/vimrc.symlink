@@ -60,6 +60,9 @@ nnoremap ; :
 nmap j gj
 nmap k gk
 
+" For MacVim
+ set guifont=Inconsolata-dz\ for\ Powerline:h13
+
 " ANTI-TEMPTATION (need to figure something better out for up + down)
 "ino <Up> <NOP>
 "ino <Right> <NOP>
