@@ -45,6 +45,15 @@ alias sfr='cd ~/Developer/tesla-repos/wsj/resp.section.resources'
 alias sfp='cd ~/Developer/tesla-repos/wsj/resp.section.pages'
 alias dep='cd ~/Developer/resp.tool.deployment'
 
+# Git
+alias gm='git merge'
+alias gs='git status'
+alias ga='git add'
+alias gpl='git pull'
+alias gph='git push'
+alias gco='git checkout'
+alias gcm='git commit -m'
+
 # Specify plugins for ZSH
 plugins=(git, brew, osx)
 source $ZSH/oh-my-zsh.sh
