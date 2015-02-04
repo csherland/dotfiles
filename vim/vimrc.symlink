@@ -78,7 +78,7 @@ nnoremap ^ <nop>
 " Moving between buffers
 nmap <C-m> :bnext<CR>
 nmap <C-b> :bprev<CR>
-nmap <C-x> :bd<CR>
+nmap <C-x> :bp<cr>:bd #<cr>
 set hidden  " Switch buffers without saving
 
 " Options dealing with search
