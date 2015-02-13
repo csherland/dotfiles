@@ -89,7 +89,7 @@ set hlsearch
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Location highlighting
-set colorcolumn=80
+set colorcolumn=100
 set cursorline
 set number          " Line numbers
 set ruler           " Column number
