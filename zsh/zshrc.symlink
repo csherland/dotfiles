@@ -34,16 +34,18 @@ antigen bundles <<EOBUNDLES
   node
   npm
 
-  # OSX Plugins
-  if [[ $CURRENT_OS == 'OS X' ]]; then
-    brew
-    brew-cask
-    osx
-  fi
 
   # Syntax highlighting
   zsh-users/zsh-syntax-highlighting
 EOBUNDLES
+
+# OSX Plugins
+if [[ $CURRENT_OS == 'OS X' ]]; then
+  echo 'mmm'
+  antigen bundle brew
+  antigen bundle brew-cask
+  antigen bundle osx
+fi
 
 # Load the theme
 antigen theme agnoster
@@ -54,8 +56,6 @@ antigen apply
 # Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
 alias art='cd ~/Developer/tesla-repos/wsj/article.app'
-alias sfr='cd ~/Developer/tesla-repos/wsj/resp.section.resources'
-alias sfp='cd ~/Developer/tesla-repos/wsj/resp.section.pages'
 alias dep='cd ~/Developer/resp.tool.deployment'
 
 # Git
