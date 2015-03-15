@@ -41,7 +41,6 @@ EOBUNDLES
 
 # OSX Plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-  echo 'mmm'
   antigen bundle brew
   antigen bundle brew-cask
   antigen bundle osx
