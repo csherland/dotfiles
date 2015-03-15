@@ -4,40 +4,52 @@
 #   Zshell configurations
 #
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Path variables
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/heroku/bin:$PATH"
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# # want in your public, versioned repo.
+# Use .zshrc.local for anything that you don't want in your public, versioned repo.
 if [[ -a ~/.zshrc.local ]]
 then
   source ~/.zshrc.local
 fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-#ZSH_THEME="random"
+# Load antigen (alternative to oh-my-zsh)
+if [[ ! -d ~/.antigen ]]; then
+  git clone https://github.com/zsh-users/antigen.git ~/.antigen
+fi
+source ~/.antigen/antigen.zsh
 
-# Setup terminal, and turn on colors
-export TERM=xterm-256color
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
+# User oh-my-zsh's library
+antigen use oh-my-zsh
 
-# Enable color in grep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='3;33'
+# Antigen bundles
+antigen bundles <<EOBUNDLES
+  git
+  heroku
+  tmuxinator
+  command-not-found
 
-# Aliases
-alias cl='clear'
-alias vim='mvim -v'
-alias mongo-up='sudo mongod --fork --smallfiles --logpath /data/db/mongo.log --dbpath /data/db'
-alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-alias gd='git diff HEAD~1 HEAD'
-alias gcm='git commit -m'
-alias lg='ls | grep';
+  # Node.js plugins
+  node
+  npm
+
+  # OSX Plugins
+  if [[ $CURRENT_OS == 'OS X' ]]; then
+    brew
+    brew-cask
+    osx
+  fi
+
+  # Syntax highlighting
+  zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+# Load the theme
+antigen theme agnoster
+
+# Tell antigen that we're done
+antigen apply
 
 # Work aliases
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
@@ -55,12 +67,3 @@ alias gph='git push'
 alias gco='git checkout'
 alias gcm='git commit -m'
 
-# Specify plugins for ZSH
-plugins=(git, brew, osx)
-source $ZSH/oh-my-zsh.sh
-
-# Path variables
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-# Function
-export WSJ_REPOS=~/Developer/tesla-repos/wsj
