@@ -25,7 +25,6 @@ brew install zsh
 
 # Some useful casks (non app-store apps)
 brew cask install adium
-brew cask install atom
 brew cask install dropbox
 brew cask install flux
 brew cask install handbrake
