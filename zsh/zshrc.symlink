@@ -61,3 +61,5 @@ antigen apply
 alias wsj='wsj.app -r ~/Developer/tesla-repos/wsj/'
 alias art='cd ~/Developer/tesla-repos/wsj/article.app'
 alias dep='cd ~/Developer/resp.tool.deployment'
+
+fortune | cowsay

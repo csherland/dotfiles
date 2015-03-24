@@ -14,7 +14,9 @@ then
 fi
 
 # Brew utilities
+brew install cowsay
 brew install caskroom/cask/brew-cask
+brew install fortune
 brew install git
 brew install htop
 brew install macvim --override-system-vim
