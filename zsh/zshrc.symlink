@@ -4,6 +4,8 @@
 #   Zshell configurations
 #
 
+export ZSH=$HOME/.dotfiles
+
 # Path variables
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/heroku/bin:$PATH" # Added by heroku

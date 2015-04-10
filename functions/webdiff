@@ -1,0 +1,9 @@
+#
+# webdiff
+#   Function thats takes two web links as arguments and outputs the diff
+#   Uses a silent curl to get the content of each page
+#
+
+webdiff (link1, link2) {
+  diff <(curl -s $(link1)) <(curl -s $(link2)
+}
