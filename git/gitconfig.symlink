@@ -13,3 +13,5 @@
 	email = christian.sherland@dowjones.com
 [url "https://"]
 	insteadOf = git://
+[push]
+	default = matching

@@ -1,7 +1,8 @@
 "
 "	Christian Sherland
-"	    .vimrc
-"
+" .vimrc
+"   Vim configurations and plugins. Includes useful script to auto
+"   install vundle if it is not already installed
 "
 
 " Use vim - no vi defaults
@@ -61,15 +62,6 @@ nnoremap ; :
 " Fix wrapping behavior when moving
 nmap j gj
 nmap k gk
-
-" For MacVim
- set guifont=Inconsolata-dz\ for\ Powerline:h13
-
-" ANTI-TEMPTATION (need to figure something better out for up + down)
-"ino <Up> <NOP>
-"ino <Right> <NOP>
-"ino <Down> <NOP>
-"ino <Left> <NOP>
 
 " move to beginning/end of line
 nnoremap B ^
