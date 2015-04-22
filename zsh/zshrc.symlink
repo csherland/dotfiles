@@ -54,7 +54,8 @@ if [[ $('uname') == 'Linux' ]]; then
 fi
 
 # Load the theme
-antigen theme agnoster
+#antigen theme jbergantine
+antigen theme steeef
 
 # Tell antigen that we're done
 antigen apply

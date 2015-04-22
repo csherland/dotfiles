@@ -9,7 +9,7 @@ if filereadable(expand("~/.gvimrc.before"))
 endif
 
 " PRETTINESS
-set guifont=Inconsolata-dz\ for\ Powerline:h13
+set guifont=Inconsolata-dz\ for\ Powerline:h14
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=T  "remove toolbar
@@ -19,6 +19,9 @@ set selectmode=key
 
 " No min-height on windows
 set wmh=0
+
+" Fullscreen mode in yosemite
+set lines=999
 
 " Map fullscreen to Command+Enter
 map <D-Enter> :set invfu<CR>
