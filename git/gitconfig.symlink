@@ -11,7 +11,6 @@
 [user]
 	name = Christian
 	email = christian.sherland@dowjones.com
-[url "https://"]
-	insteadOf = git://
-[push]
-	default = matching
+[alias]
+  lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
