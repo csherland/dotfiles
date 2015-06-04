@@ -23,20 +23,20 @@ endif
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'kien/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'bling/vim-airline'
+  Plugin 'bling/vim-bufferline'
+  Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'mustache/vim-mustache-handlebars'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin indent on
 
