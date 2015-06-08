@@ -177,8 +177,12 @@ highlight SyntasticErrorSign guifg=white guibg=red
 let g:syntastic_enable_signs=1
 let g:syntastic_javascript_checkers = ['jshint']
 
+" Better :sign interface symbols
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
 " Ignore html in syntastic since it doesn't handle handlebars
- let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " Airline
 set laststatus=2
@@ -200,6 +204,7 @@ nmap <silent> <leader>gp :Git push<CR>
 
 " Weird colors for gitgutter, etc
 hi clear SignColumn
+let g:gitgutter_realtime=1
 
 " Cntrlp ignore
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'

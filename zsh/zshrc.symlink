@@ -27,31 +27,9 @@ antigen use oh-my-zsh
 
 # Antigen bundles
 antigen bundles <<EOBUNDLES
-  git
-  heroku
-  command-not-found
-
-  # Node.js plugins
-  node
-  npm
-
   # Syntax highlighting
   zsh-users/zsh-syntax-highlighting
-
-  # Auto update antigen
-  unixorn/autoupdate-antigen.zshplugin
 EOBUNDLES
-
-# OSX Plugins
-if [[ $('uname') == 'Darwin' ]]; then
-  antigen bundle brew
-  antigen bundle brew-cask
-  antigen bundle osx
-fi
-
-# Linux Plugins
-if [[ $('uname') == 'Linux' ]]; then
-fi
 
 # Load the theme
 #antigen theme jbergantine
