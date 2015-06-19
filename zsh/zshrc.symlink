@@ -29,6 +29,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
   # Syntax highlighting
   zsh-users/zsh-syntax-highlighting
+  rupa/z
 EOBUNDLES
 
 # Load the theme
