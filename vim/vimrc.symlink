@@ -28,14 +28,17 @@ call vundle#begin()
   Plugin 'bling/vim-airline'
   Plugin 'bling/vim-bufferline'
   Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'janko-m/vim-test'
   Plugin 'kien/ctrlp.vim'
   Plugin 'pangloss/vim-javascript'
   Plugin 'mustache/vim-mustache-handlebars'
+  Plugin 'Raimondi/delimitMate'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-fugitive'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'wakatime/vim-wakatime'
   Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin indent on
@@ -207,3 +210,8 @@ let g:gitgutter_realtime=1
 
 " Cntrlp ignore
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" YouCompleteMe
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
