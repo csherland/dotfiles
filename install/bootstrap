@@ -153,7 +153,11 @@ then
   fi
 fi
 
+info "cleaning up..."
+if source install/postinstall
+then
+  success "cleanup successful"
 
 
 echo ''
-echo '  All installed!'
+echo 'Installation complete'
