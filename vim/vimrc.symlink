@@ -54,7 +54,6 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
-"let g:solarized_contrast = "high"
 let g:solarized_termcolors=256
 
 " Time savers
@@ -64,12 +63,6 @@ nnoremap ; :
 " Fix wrapping behavior when moving
 nmap j gj
 nmap k gk
-
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
-nnoremap $ <nop>
-nnoremap ^ <nop>
 
 " Moving between buffers
 nmap <C-m> :bnext<CR>
@@ -107,12 +100,6 @@ set copyindent
 set showmatch
 set smarttab
 set nofoldenable
-
-function! SetAltPrefs()
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
-endfunction
 
 " Copy to clipboard
 map <C-c> "+y<CR>
@@ -174,17 +161,12 @@ function! ToggleErrors()
 endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
-nmap <silent> <leader>stm :SyntasticToggleMode<CR>
-highlight SyntasticErrorSign guifg=white guibg=red
 let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
-" Better :sign interface symbols
+" Better sign interface symbols
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
-
-" Ignore html in syntastic since it doesn't handle handlebars
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " Airline
 set laststatus=2
@@ -196,14 +178,6 @@ let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
-" Fugitive
-nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>gc :Gcommit<CR>
-nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>gl :Glog<CR>
-nmap <silent> <leader>gp :Git push<CR>
-
 " Weird colors for gitgutter, etc
 hi clear SignColumn
 let g:gitgutter_realtime=1
@@ -214,4 +188,4 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " YouCompleteMe
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
+set completeopt=preview
