@@ -32,9 +32,9 @@ antigen bundles <<EOBUNDLES
   rupa/z
 EOBUNDLES
 
-# Load the theme
-#antigen theme jbergantine
+# Vim mode
+bindkey -v
+
 antigen theme steeef
 
-# Tell antigen that we're done
 antigen apply

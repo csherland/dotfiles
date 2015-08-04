@@ -63,16 +63,11 @@ link_file () {
 
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
     then
-
       local currentSrc="$(readlink $dst)"
-
       if [ "$currentSrc" == "$src" ]
       then
-
         skip=true;
-
       else
-
         user "File already exists: $(basename "$src"), what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
@@ -92,9 +87,7 @@ link_file () {
           * )
             ;;
         esac
-
       fi
-
     fi
 
     overwrite=${overwrite:-$overwrite_all}
@@ -141,7 +134,7 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we're on a Mac, let's install and setup homebrew.
+# Mac specific install steps
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies\n"
@@ -157,7 +150,9 @@ info "cleaning up..."
 if source install/postinstall
 then
   success "cleanup successful"
+else
+  fail "error in postinstall cleanup"
 
 
 echo ''
-echo 'Installation complete'
+echo 'Finished'
