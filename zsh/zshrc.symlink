@@ -32,9 +32,6 @@ antigen bundles <<EOBUNDLES
   rupa/z
 EOBUNDLES
 
-# Vim mode
-bindkey -v
-
 antigen theme steeef
 
 antigen apply
