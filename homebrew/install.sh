@@ -20,6 +20,7 @@ brew install caskroom/cask/brew-cask
 brew install git
 brew install htop
 brew install macvim --override-system-vim
+brew install cmake
 brew install node
 brew install the_silver_searcher
 brew install wget

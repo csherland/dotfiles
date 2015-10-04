@@ -38,7 +38,6 @@ call vundle#begin()
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-fugitive'
   Plugin 'Valloric/YouCompleteMe'
-  Plugin 'wakatime/vim-wakatime'
   Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin indent on
