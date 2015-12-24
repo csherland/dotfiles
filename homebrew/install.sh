@@ -14,7 +14,6 @@ then
 fi
 
 # Brew utilities
-# brew install cowsay
 brew install caskroom/cask/brew-cask
 # brew install fortune
 brew install git
@@ -27,17 +26,16 @@ brew install wget
 brew install zsh
 
 # Some useful casks (non app-store apps)
-#brew cask install adium
-#brew cask install dropbox
-#brew cask install flux
-#brew cask install handbrake
-#brew cask install iterm2
-#brew cask install seil
-#brew cask install skype
-#brew cask install spectacle
-#brew cask install spotify
-#brew cask install steam
-#brew cask install vlc
+brew cask install adium
+brew cask install amethyst
+brew cask install dropbox
+brew cask install flux
+brew cask install handbrake
+brew cask install iterm2
+brew cask install seil
+brew cask install spotify
+brew cask install steam
+brew cask install vlc
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
