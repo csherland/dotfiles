@@ -41,5 +41,12 @@ brew cask install vlc
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
 
+# Spacemacs!
+brew tap railwaycat/homebrew-emacsmacport
+brew install emacs-mac --with-spacemacs-icon
+
+# Symlink installed apps
+brew linkapps
+
 # Success
 exit 0
