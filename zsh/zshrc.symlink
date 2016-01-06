@@ -6,10 +6,6 @@
 
 export ZSH=$HOME/.dotfiles
 
-# Path variables
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/heroku/bin:$PATH" # Added by heroku
-
 # Use .zshrc.local for anything that you don't want in your public, versioned repo.
 if [[ -a ~/.zshrc.local ]]
 then
