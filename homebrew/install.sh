@@ -13,9 +13,7 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Brew utilities
-brew install caskroom/cask/brew-cask
-# brew install fortune
+# Utilities
 brew install git
 brew install htop
 brew install macvim --override-system-vim
@@ -25,8 +23,8 @@ brew install the_silver_searcher
 brew install wget
 brew install zsh
 
-# Some useful casks (non app-store apps)
-brew cask install adium
+# Casks (non app-store apps)
+brew install caskroom/cask/brew-cask
 brew cask install amethyst
 brew cask install dropbox
 brew cask install flux
@@ -40,10 +38,6 @@ brew cask install vlc
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
-
-# Spacemacs!
-brew tap railwaycat/homebrew-emacsmacport
-brew install emacs-mac --with-spacemacs-icon
 
 # Symlink installed apps
 brew linkapps
