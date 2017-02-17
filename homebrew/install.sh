@@ -26,7 +26,6 @@ brew install zsh
 
 # Some useful casks (non app-store apps)
 brew cask install dropbox
-brew cask install flux
 brew cask install iterm2
 brew cask install spotify
 brew cask install steam
