@@ -8,8 +8,5 @@
 #   gulp    - great task runner
 #   bower   - front end package manager (jquery, bootstrap, etc.)
 #
-
-npm install -g nodemon
-npm install -g gulp
-npm install -g bower
-npm install -g jshint
+npm install -g webpack
+npm install -g eslint

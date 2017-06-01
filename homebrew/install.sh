@@ -25,19 +25,12 @@ brew install wget
 brew install zsh
 
 # Some useful casks (non app-store apps)
-brew cask install dropbox
-brew cask install iterm2
 brew cask install spotify
-brew cask install steam
 brew cask install vlc
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
-
-# Spacemacs!
-brew tap railwaycat/homebrew-emacsmacport
-brew install emacs-mac --with-spacemacs-icon
 
 # Symlink installed apps
 brew linkapps
