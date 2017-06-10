@@ -25,6 +25,7 @@ brew install wget
 brew install zsh
 
 # Some useful casks (non app-store apps)
+brew cask install amethyst
 brew cask install spotify
 brew cask install vlc
 
