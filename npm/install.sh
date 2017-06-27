@@ -4,12 +4,11 @@
 #   Configures npm locally and installs a few packages that
 #   I use frequently
 #
-#   nodemon - restart node server on changes
-#   gulp    - great task runner
-#   bower   - front end package manager (jquery, bootstrap, etc.)
+#   eslint  - code standards
+#   n       - change node version on the fly
+#   webpack - bundle browser assets and build process
 #
 
-npm install -g nodemon
-npm install -g gulp
-npm install -g bower
-npm install -g jshint
+npm install -g eslint
+npm install -g n
+npm install -g webpack

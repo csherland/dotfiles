@@ -20,17 +20,12 @@ brew install macvim --override-system-vim
 brew install cmake
 brew install node
 brew install the_silver_searcher
-brew install wget
 brew install zsh
 
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
 brew cask install amethyst
-brew cask install dropbox
-brew cask install flux
-brew cask install handbrake
 brew cask install iterm2
-brew cask install seil
 brew cask install spotify
 brew cask install steam
 brew cask install vlc
