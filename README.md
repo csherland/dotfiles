@@ -32,7 +32,7 @@ The provided instalation script installs a number of useful applications and
 utilities. First and foremost is the Homebrew package manager for mac which is
 used to install the tools and applications listed below.
 
-####Command line utilities:
+#### Command line utilities:
     - brew-cask
     - git
     - htop
