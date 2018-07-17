@@ -9,12 +9,6 @@
 echo "Setting reasonable defaults for osx. Password required."
 sudo -v
 
-# Set computer name (as done via System Preferences → Sharing)
-#sudo scutil --set ComputerName "higgis"
-#sudo scutil --set HostName "higgis"
-#sudo scutil --set LocalHostName "higgis"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "higgis"
-
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 

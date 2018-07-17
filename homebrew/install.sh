@@ -25,8 +25,6 @@ brew install zsh
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
 brew cask install amethyst
-brew cask install iterm2
-brew cask install spotify
 brew cask install vlc
 
 # Inconsolata font, because it's awesome
