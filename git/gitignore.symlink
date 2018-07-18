@@ -55,3 +55,7 @@ Thumbs.db
 project.xcworkspace/
 xcuserdata/
 
+############
+# intellij #
+############
+*.idea
