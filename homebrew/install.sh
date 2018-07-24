@@ -28,6 +28,8 @@ brew cask install amethyst
 brew cask install vlc
 brew cask install spotify
 brew cask install spotmenu
+brew cask install clipy
+brew cask install rocket
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
