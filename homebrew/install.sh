@@ -25,11 +25,12 @@ brew install zsh
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
 brew cask install amethyst
-brew cask install vlc
+brew cask install clipy
+brew cask install emacs
+brew cask install rocket
 brew cask install spotify
 brew cask install spotmenu
-brew cask install clipy
-brew cask install rocket
+brew cask install vlc
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
