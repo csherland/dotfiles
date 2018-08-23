@@ -4,7 +4,5 @@
 #   Installs all my vim plugins
 #
 
-vim +PluginInstall +qall
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
-cd ~
+curl https://j.mp/spf13-vim3 -L > ~/spf13-vim.sh && sh ~/spf13-vim.sh
+rm ~/spf13-vim.sh

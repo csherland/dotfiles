@@ -1,0 +1,114 @@
+"
+"	Christian Sherland
+" .vimrc
+"   Vim configurations and plugins. Includes useful script to auto
+"   install vundle if it is not already installed
+"
+
+" Use vim - no vi defaults
+set nocompatible
+
+" Better color stuff
+syntax enable
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
+let g:solarized_termtrans=0
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+
+" Time savers
+let mapleader=","
+nnoremap ; :
+
+set visualbell
+set t_vb=
+
+" Fix wrapping behavior when moving
+nmap j gj
+nmap k gk
+
+" Moving between buffers
+nmap <C-m> :bnext<CR>
+nmap <C-b> :bprev<CR>
+nmap <C-x> :bp<cr>:bd #<cr>
+set hidden  " Switch buffers without saving
+
+" Options dealing with search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Location highlighting
+set colorcolumn=100
+set cursorline
+set number          " Line numbers
+set ruler           " Column number
+set encoding=utf-8  " Default UTF-8 encoding
+
+" Show command in bottom bar
+set showcmd
+set wildmenu
+
+" Some editing preferences (tabs,  etc)
+set expandtab
+set tabstop=2
+set softtabstop=0
+set shiftwidth=2
+set backspace=indent,eol,start
+set autoindent
+set smartindent
+set copyindent
+set showmatch
+set smarttab
+set nofoldenable
+
+" Copy to clipboard
+map <C-c> "+y<CR>
+
+" Set information on history
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" Terminal setting
+set title
+set visualbell
+set noerrorbells
+
+" Dont allow vim to make backups
+set nobackup
+set noswapfile
+
+" INDENTING BLOCKS (retains vis. selection)
+vnoremap > >gv
+vnoremap < <gv
+
+" Navigating between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable the use of the mouse
+set mouse=a
+
+" Add file-type specific options
+au BufNewFile,BufRead *.json set filetype=javascript
+au BufNewFile,BufRead *.css set synmaxcol=120
+au BufEnter *.css set nowrap
+
+" Forgot to sudo? No problem!
+cmap w!! w !sudo tee % >/dev/null
+
+" Easy mapping to kill trailing whitespace
+nmap <silent> <leader>fw :FixWhitespace<CR>
+
+" Weird colors for git gutter
+hi clear SignColumn
+let g:gitgutter_realtime=1
+
+" Cntrlp ignore
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
