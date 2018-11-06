@@ -24,9 +24,10 @@ brew install zsh
 
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
+brew cask install 1clipboard
 brew cask install amethyst
-brew cask install clipy
-brew cask install emacs
+#brew cask install emacs
+#brew cask install hyper
 brew cask install rocket
 brew cask install spotify
 brew cask install spotmenu

@@ -55,6 +55,15 @@ Thumbs.db
 project.xcworkspace/
 xcuserdata/
 
+###########
+# VS Code #
+###########
+.vscode
+.classpath
+.factorypath
+.project
+.settings
+
 ############
 # intellij #
 ############
