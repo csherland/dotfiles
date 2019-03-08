@@ -27,10 +27,12 @@ brew install caskroom/cask/brew-cask
 brew cask install amethyst
 brew cask install rocket
 brew cask install vlc
+brew cask install emacs
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
 brew cask install font-inconsolata-dz-for-powerline
+brew cask install font-fira-code
 
 # Symlink installed apps
 brew linkapps
