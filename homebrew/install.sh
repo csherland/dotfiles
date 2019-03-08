@@ -16,7 +16,7 @@ fi
 # Utilities
 brew install git
 brew install htop
-brew install macvim --with-cscope --with-lua --with-override-system-vim
+brew install macvim
 brew install cmake
 brew install node
 brew install the_silver_searcher
@@ -24,13 +24,8 @@ brew install zsh
 
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
-brew cask install 1clipboard
 brew cask install amethyst
-#brew cask install emacs
-#brew cask install hyper
 brew cask install rocket
-brew cask install spotify
-brew cask install spotmenu
 brew cask install vlc
 
 # Inconsolata font, because it's awesome
