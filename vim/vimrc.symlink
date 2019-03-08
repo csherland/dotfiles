@@ -8,6 +8,46 @@
 " Use vim - no vi defaults
 set nocompatible
 
+" Setting up Vundle - the vim plugin bundler
+let hasVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let hasVundle=0
+endif
+
+" Vundle plugin management
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'bling/vim-airline'
+  Plugin 'bling/vim-bufferline'
+  Plugin 'bronson/vim-trailing-whitespace'
+  Plugin 'janko-m/vim-test'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'mustache/vim-mustache-handlebars'
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'Yggdroot/indentLine'
+call vundle#end()
+
+" ...All your other bundles...
+if hasVundle == 0
+  echo "Installing Plugins, please ignore key map error messages"
+  echo ""
+  :PluginInstall
+endif
+
 " Better color stuff
 syntax enable
 set background=dark
