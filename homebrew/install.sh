@@ -24,8 +24,10 @@ brew install zsh
 
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
+brew cask install alfred
 brew cask install amethyst
 brew cask install rocket
+brew cask install spotify
 brew cask install vlc
 brew cask install emacs
 
