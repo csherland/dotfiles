@@ -26,6 +26,9 @@ brew install zsh
 brew install caskroom/cask/brew-cask
 brew cask install alfred
 brew cask install amethyst
+brew cask install docker
+brew cask install kitematic
+brew cask install plug
 brew cask install rocket
 brew cask install spotify
 brew cask install vlc
