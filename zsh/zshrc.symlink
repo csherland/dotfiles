@@ -13,7 +13,7 @@ then
 fi
 
 # aliases
-alias vim="mvim -v"
+# alias vim="mvim -v"
 
 # Load antigen (alternative to oh-my-zsh)
 if [[ ! -d ~/.antigen ]]; then
@@ -34,3 +34,5 @@ EOBUNDLES
 antigen theme steeef
 
 antigen apply
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
