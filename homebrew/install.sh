@@ -14,12 +14,12 @@ then
 fi
 
 # Utilities
+brew install cmake
 brew install git
 brew install htop
 brew install macvim
-brew install cmake
 brew install node
-brew install the_silver_searcher
+brew install pt
 brew install zsh
 
 # Casks (non app-store apps)
@@ -27,10 +27,9 @@ brew install caskroom/cask/brew-cask
 brew cask install alfred
 brew cask install amethyst
 brew cask install docker
-brew cask install hyper
+brew cask install iterm2
 brew cask install rocket
 brew cask install spotify
-brew cask install vlc
 brew cask install emacs
 
 # Inconsolata font, because it's awesome
