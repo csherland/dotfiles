@@ -32,9 +32,12 @@ brew cask install iterm2
 brew cask install intellij-idea-ce
 brew cask install little-snitch
 brew cask install private-internet-access
+brew cask install postman
+brew cask install postbird
 brew cask install rocket
 brew cask install spotify
 brew cask install visual-studio-code
+brew cask install zoomus
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
