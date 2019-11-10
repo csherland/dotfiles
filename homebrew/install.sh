@@ -27,10 +27,14 @@ brew install caskroom/cask/brew-cask
 brew cask install alfred
 brew cask install amethyst
 brew cask install docker
+brew cask install hyper
 brew cask install iterm2
+brew cask install intellij-idea-ce
+brew cask install little-snitch
+brew cask install private-internet-access
 brew cask install rocket
 brew cask install spotify
-brew cask install emacs
+brew cask install visual-studio-code
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts

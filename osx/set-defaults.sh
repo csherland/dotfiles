@@ -49,9 +49,6 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Enable iTunes track notifications in the Dock
-defaults write com.apple.dock itunes-notifications -bool true
-
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
@@ -59,7 +56,7 @@ chflags nohidden ~/Library
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # Change where screenshots are saved
-defaults write com.apple.screencapture location ~/Pictures/Screenshots
+defaults write com.apple.screencapture location ~/Desktop
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -92,3 +89,15 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 sudo defaults write com.apple.loginwindow GuestEnabled -bool false
 sudo defaults write com.apple.AppleFileServer guestAccess -bool false
 sudo defaults write com.apple.smb.server AllowGuestAccess -bool false
+
+# Expanding the save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Disable the 'Are you sure you want to open this application?' dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Increasing sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Disable autocorrect
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false

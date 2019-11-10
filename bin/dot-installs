@@ -17,4 +17,3 @@ $ZSH/iterm/install.sh
 $ZSH/npm/install.sh
 $ZSH/vim/install.sh
 $ZSH/zsh/install.sh
-$ZSH/emacs/install.sh
