@@ -101,3 +101,49 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 
 # Disable autocorrect
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Don’t group windows by application in Mission Control
+# (i.e. use the old Exposé behavior instead)
+defaults write com.apple.dock expose-group-by-app -bool false
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Enable spring loading for all Dock items
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Disable recent apps in dock
+defaults write com.apple.dock show-recents -bool FALSE
+
+# Minimize windows into dock icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Disable Resume system-wide
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
