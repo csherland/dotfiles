@@ -147,3 +147,11 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Show battery percentage in menu bar
+defaults write com.apple.menuextra.battery ShowPercent YES
+
+# Show bluetooth and sound in the menu bar
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/Volume.menu"
