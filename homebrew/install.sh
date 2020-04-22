@@ -35,8 +35,9 @@ brew cask install postman
 brew cask install postbird
 brew cask install rocket
 brew cask install spotify
+brew cask install statusfy
 brew cask install visual-studio-code
-#brew cask install zoomus
+brew cask install zoomus
 
 # Inconsolata font, because it's awesome
 brew tap caskroom/fonts
