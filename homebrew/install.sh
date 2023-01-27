@@ -24,15 +24,12 @@ brew install zsh
 # Casks (non app-store apps)
 brew install caskroom/cask/brew-cask
 brew cask install amethyst
-# brew cask install alfred
-# brew cask install amethyst
+brew cask install alfred
+brew cask install amethyst
 # brew cask install docker
-# brew cask install iterm2
-# brew cask install intellij-idea-ce
-# brew cask install postman
-# brew cask install postbird
+brew cask install iterm2
 # brew cask install rocket
-# brew cask install spotify
+brew cask install spotify
 # brew cask install visual-studio-code
 
 # Inconsolata font, because it's awesome
