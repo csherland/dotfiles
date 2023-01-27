@@ -14,6 +14,5 @@ $ZSH/osx/set-defaults.sh
 # Run install scripts
 $ZSH/homebrew/install.sh
 $ZSH/iterm/install.sh
-$ZSH/npm/install.sh
 $ZSH/vim/install.sh
 $ZSH/zsh/install.sh
