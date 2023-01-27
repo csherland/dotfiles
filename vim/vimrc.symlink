@@ -31,13 +31,10 @@ call vundle#begin()
   Plugin 'janko-m/vim-test'
   Plugin 'kien/ctrlp.vim'
   Plugin 'pangloss/vim-javascript'
-  Plugin 'mustache/vim-mustache-handlebars'
   Plugin 'Raimondi/delimitMate'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'Valloric/YouCompleteMe'
   Plugin 'Yggdroot/indentLine'
 call vundle#end()
 
