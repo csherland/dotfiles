@@ -39,3 +39,5 @@ export PATH="/usr/local/sbin:$PATH"
 
 # 1password ssh
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
