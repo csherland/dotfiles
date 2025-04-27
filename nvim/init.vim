@@ -1,6 +1,6 @@
-# 
-# Neovim config
-#
+" 
+" Neovim config
+"
 
 " Use vim - no vi defaults
 set nocompatible
@@ -14,8 +14,7 @@ let mapleader=","
 nnoremap ; :
 inoremap <leader>\ <esc>
 
-set visualbell
-" set t_vb=
+" set visualbell
 
 " Fix wrapping behavior when moving
 nmap j gj
@@ -67,7 +66,9 @@ set smarttab
 set foldenable
 set foldlevelstart=4
 set foldmethod=indent
-nnoremap <space> za 	" space open/closes folds
+
+" space opens/closes folds
+nnoremap <space> za 	 
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -116,4 +117,3 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Easy mapping to kill trailing whitespace
 nmap <silent> <leader>fw :FixWhitespace<CR>
-
