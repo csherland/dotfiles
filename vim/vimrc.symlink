@@ -1,7 +1,6 @@
 "
 " .vimrc
-"   Vim configurations and plugins. Includes useful script to auto
-"   install vundle if it is not already installed
+"   Vim configurations and plugins.
 "
 
 " Use vim - no vi defaults

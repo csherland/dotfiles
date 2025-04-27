@@ -1,26 +1,119 @@
-set nocompatible            " disable compatibility to old-time vi
-set showmatch               " show matching 
-set ignorecase              " case insensitive 
-set mouse=v                 " middle-click paste with 
-set hlsearch                " highlight search 
-set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab 
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab               " converts tabs to white space
-set shiftwidth=4            " width for autoindents
-set autoindent              " indent a new line the same amount as the line just typed
-set number                  " add line numbers
-set wildmode=longest,list   " get bash-like tab completions
-set cc=80                  " set an 80 column border for good coding style
-filetype plugin indent on   "allow auto-indenting depending on file type
-syntax on                   " syntax highlighting
-set mouse=a                 " enable mouse click
-set clipboard=unnamedplus   " using system clipboard
-filetype plugin on
-set cursorline              " highlight current cursorline
-set ttyfast                 " Speed up scrolling in Vim
-" set spell                 " enable spell check (may need to download language package)
-" set noswapfile            " disable creating swap file
-" set backupdir=~/.cache/vim " Directory to store backup files.
+# 
+# Neovim config
+#
 
+" Use vim - no vi defaults
+set nocompatible
+
+" Better color stuff
+syntax enable
+set background=dark
+
+" Time savers
+let mapleader=","
+nnoremap ; :
+inoremap <leader>\ <esc>
+
+set visualbell
+" set t_vb=
+
+" Fix wrapping behavior when moving
+nmap j gj
+nmap k gk
+
+" Moving between buffers
+nmap <C-m> :bnext<CR>
+nmap <C-b> :bprev<CR>
+nmap <C-x> :bp<cr>:bd #<cr>
+set hidden  " Switch buffers without saving
+
+" Options dealing with search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Location highlighting
+set colorcolumn=100
+set cursorline
+set ruler           " Column number
+set encoding=utf-8  " Default UTF-8 encoding
+
+" Turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
+" Redraw only when necessary
+set lazyredraw
+
+" Show command in bottom bar
+set showcmd
+set wildmenu
+
+" Some editing preferences (tabs,  etc)
+set expandtab
+set tabstop=2
+set softtabstop=0
+set shiftwidth=2
+set backspace=indent,eol,start
+set autoindent
+set smartindent
+set copyindent
+set showmatch
+set smarttab
+
+" Code folding
+set foldenable
+set foldlevelstart=4
+set foldmethod=indent
+nnoremap <space> za 	" space open/closes folds
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" Copy to clipboard
+map <C-c> "+y<CR>
+
+" Set information on history
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" Terminal setting
+set title
+set visualbell
+set noerrorbells
+
+" Dont allow vim to make backups
+set nobackup
+set noswapfile
+
+" INDENTING BLOCKS (retains vis. selection)
+vnoremap > >gv
+vnoremap < <gv
+
+" Navigating between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Move to start/end of line
+nnoremap B ^
+nnoremap E $
+
+" Enable the use of the mouse
+set mouse=a
+
+" Add file-type specific options
+au BufNewFile,BufRead *.json set filetype=javascript
+au BufNewFile,BufRead *.css set synmaxcol=120
+au BufEnter *.css set nowrap
+
+" Forgot to sudo? No problem!
+cmap w!! w !sudo tee % >/dev/null
+
+" Easy mapping to kill trailing whitespace
+nmap <silent> <leader>fw :FixWhitespace<CR>
 

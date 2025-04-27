@@ -4,5 +4,5 @@
 #   Installs all my vim plugins
 #
 
-vim +PluginInstall +qall
-cd ~
+#vim +PluginInstall +qall
+#cd ~
