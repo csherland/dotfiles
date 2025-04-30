@@ -27,3 +27,4 @@ export ZSH="$HOME/.oh-my-zsh"
 set HISTFILE ~/.zsh_history
 set HISTSIZE 10000
 set SAVEHIST 10000
+
