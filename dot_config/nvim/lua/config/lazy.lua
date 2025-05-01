@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,22 +14,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Setup lazy.nvim
-require('lazy').setup {
+require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
-    -- import your plugins
-    { import = 'plugins' },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- import/override with your plugins
+    { import = "plugins" },
   },
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { 'habamax' } },
+  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
@@ -39,15 +30,14 @@ require('lazy').setup {
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
-        'gzip',
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
       },
     },
   },
-}
+})
+
