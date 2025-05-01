@@ -8,4 +8,7 @@ LICENSE.md
 **/plugged/
 **/plugged/**/*
 **/yankring_history*.txt
+lazy-lock.json
+lazyvim.json
+
 
