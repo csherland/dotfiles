@@ -22,8 +22,6 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
-export ZSH="$HOME/.oh-my-zsh"
-
 set HISTFILE ~/.zsh_history
 set HISTSIZE 10000
 set SAVEHIST 10000
