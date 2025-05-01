@@ -1,0 +1,11 @@
+# Repo metadata 
+README.md
+LICENSE.md
+
+# Neovim
+**/autoload/
+**/autoload/**/*
+**/plugged/
+**/plugged/**/*
+**/yankring_history*.txt
+
