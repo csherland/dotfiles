@@ -11,10 +11,13 @@ source $HOME/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle <<EOBUNDLES
+  git
+  zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+EOBUNDLES
 
 # Load the theme.
 antigen theme robbyrussell
@@ -22,10 +25,5 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
-# Aliases
 source $HOME/.config/zsh/aliases
-
-set HISTFILE ~/.zsh_history
-set HISTSIZE 10000
-set SAVEHIST 10000
-
+source $HOME/.config/zsh/env
