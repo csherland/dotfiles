@@ -3,4 +3,5 @@ packages:
     brews:
       - 'git'
       - 'neovim'
+      - 'zsh'
       - 'starship'
