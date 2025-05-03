@@ -1,0 +1,6 @@
+packages:
+  darwin:
+    brews:
+      - 'git'
+      - 'neovim'
+      - 'starship'
