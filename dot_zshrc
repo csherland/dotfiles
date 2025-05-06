@@ -26,3 +26,8 @@ eval "$(starship init zsh)"
 
 source $HOME/.config/zsh/aliases
 source $HOME/.config/zsh/env
+
+# Check if ~/.zshrc.local exists and source it if it does
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
