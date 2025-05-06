@@ -1,0 +1,21 @@
+{{ if eq .chezmoi.os "darwin" "linux" -}}
+#!/usr/bin/env bash
+
+{{ include (joinPath .chezmoi.sourceDir ".chezmoitemplates/scripts-library.sh") -}}
+
+{{ $current_shell := env "SHELL" -}}
+{{ if (and (eq .chezmoi.os "darwin") (eq $current_shell "/opt/homebrew/bin/zsh")) -}}
+    exit 0
+{{ end }}
+
+{{ if (and (eq .chezmoi.os "linux") (eq $current_shell "/usr/bin/zsh")) -}}
+    exit 0
+{{ end }}
+
+if ask_user "Change default shell to zsh?"; then
+    current_user=$USER
+    echo "Changing shell for current user to zsh"
+    sudo chsh -s {{ if eq .chezmoi.os "darwin" }}"$(brew --prefix)"/bin/zsh{{ else }}/usr/bin/zsh{{ end }} $current_user
+fi
+
+{{ end -}}
