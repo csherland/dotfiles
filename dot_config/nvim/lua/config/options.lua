@@ -37,12 +37,7 @@ opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.smartindent = true
 
--- ruler
 opt.ruler = true
-opt.colorcolumn = 120
-
 opt.wrap = false
-
 opt.incsearch = true -- incremental search
-
 opt.termguicolors = true
