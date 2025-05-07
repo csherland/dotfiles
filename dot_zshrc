@@ -1,16 +1,16 @@
+#
+# .zshrc
+#   Zshell configurations
+#
+#
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-#
-# .zshrc
-#   Zshell configurations
-#
-
-export XDG_CONFIG_HOME="$HOME/.config"
 
 source $HOME/.config/zsh/antigen.zsh
 
@@ -29,13 +29,11 @@ antigen theme romkatv/powerlevel10k
 # Tell Antigen that you're done.
 antigen apply
 
-# Load the theme
-#eval "$(starship init zsh)"
-
+# Aliases and env vars
 source $HOME/.config/zsh/aliases
 source $HOME/.config/zsh/env
 
-# Check if ~/.zshrc.local exists and source it if it does
+# Local zshrc for things that shouldn't be in source control
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
