@@ -5,6 +5,7 @@ packages:
       - 'tmux'
       - 'git'
       - 'zsh'
+      - 'node'
   arch:
     pacman:
       - 'neovim'
