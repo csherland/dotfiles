@@ -2,7 +2,7 @@
 # .zshrc
 #   Zshell configurations
 #
-#
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
