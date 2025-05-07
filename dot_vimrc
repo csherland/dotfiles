@@ -13,10 +13,7 @@ set background=dark
 " Time savers
 let mapleader=","
 nnoremap ; :
-inoremap <leader>\ <esc>
-
-set visualbell
-" set t_vb=
+"inoremap <leader>\ <esc>
 
 " Fix wrapping behavior when moving
 nmap j gj
@@ -117,11 +114,3 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Easy mapping to kill trailing whitespace
 nmap <silent> <leader>fw :FixWhitespace<CR>
-
-" Weird colors for git gutter
-hi clear SignColumn
-let g:gitgutter_realtime=1
-
-" Cntrlp ignore
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
