@@ -27,15 +27,19 @@ local opt = vim.opt
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
 -- line numbers
-opt.nu = true -- set line numbers -- set line numbers
-opt.relativenumber = true -- use relative line numbers
+opt.nu = true -- set line numbers
+-- opt.relativenumber = true -- use relative line numbers
 
 -- set tab size to 2 spaces
+opt.expandtab = true
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
 opt.smartindent = true
+
+-- ruler
+opt.ruler = true
+opt.colorcolumn = 120
 
 opt.wrap = false
 
