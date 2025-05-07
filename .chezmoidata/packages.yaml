@@ -1,11 +1,11 @@
 packages:
-  common:
-    - 'neovim'
-    - 'tmux'
-    - 'starship'
   darwin:
     brews:
+      - 'neovim'
+      - 'tmux'
       - 'git'
       - 'zsh'
   arch:
     pacman:
+      - 'neovim'
+      - 'tmux'
