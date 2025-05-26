@@ -16,3 +16,6 @@ packages:
       - 'tmux'
       - 'git'
       - 'node'
+      - 'neofetch'
+      - 'fzf'
+      - 'ghostty'
