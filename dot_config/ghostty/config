@@ -1,0 +1,12 @@
+#
+# Ghostty config
+#
+#
+
+theme = catppuccin-mocha
+
+# font-family = Meslo LGS Nerd Font Mono
+font-family = CaskaydiaCove Nerd Font
+#font-size = 16
+
+gtk-titlebar = false
