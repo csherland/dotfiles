@@ -20,3 +20,4 @@ packages:
       - 'fastfetch'
       - 'fzf'
       - 'ghostty'
+      - 'lazygit'
