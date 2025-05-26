@@ -4,9 +4,13 @@
 #
 
 theme = catppuccin-mocha
-
-# font-family = Meslo LGS Nerd Font Mono
 font-family = CaskaydiaCove Nerd Font
-#font-size = 16
 
-gtk-titlebar = false
+# Initial window size
+window-width = 160 
+window-height = 60
+
+#gtk-titlebar = false
+
+# Quick terminal
+keybind = global:cmd+grave_accent=toggle_quick_terminal
