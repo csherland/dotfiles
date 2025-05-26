@@ -9,6 +9,8 @@ packages:
       - 'fzf'
       - 'fastfetch'
       - 'lazygit'
+      - 'ripgrep'
+      - 'fd'
     casks:
       - 'ghostty'
   arch:
@@ -21,3 +23,5 @@ packages:
       - 'fzf'
       - 'ghostty'
       - 'lazygit'
+      - 'ripgrep'
+      - 'fd'
