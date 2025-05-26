@@ -3,7 +3,8 @@
 #
 #
 
-theme = catppuccin-mocha
+#theme = catppuccin-mocha
+theme = tokyonight_moon
 font-family = CaskaydiaCove Nerd Font
 
 # Initial window size
