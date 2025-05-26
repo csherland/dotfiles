@@ -7,7 +7,7 @@ packages:
       - 'zsh'
       - 'node'
       - 'fzf'
-      - 'neofetch'
+      - 'fastfetch'
     casks:
       - 'ghostty'
   arch:
@@ -16,6 +16,6 @@ packages:
       - 'tmux'
       - 'git'
       - 'node'
-      - 'neofetch'
+      - 'fastfetch'
       - 'fzf'
       - 'ghostty'
