@@ -8,6 +8,7 @@ packages:
       - 'node'
       - 'fzf'
       - 'fastfetch'
+      - 'lazygit'
     casks:
       - 'ghostty'
   arch:
