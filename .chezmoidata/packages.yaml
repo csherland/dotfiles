@@ -6,6 +6,8 @@ packages:
       - 'git'
       - 'zsh'
       - 'node'
+    casks:
+      - 'ghostty'
   arch:
     pacman:
       - 'neovim'
