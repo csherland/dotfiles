@@ -28,7 +28,6 @@ opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clip
 
 -- line numbers
 opt.nu = true -- set line numbers
--- opt.relativenumber = true -- use relative line numbers
 
 -- set tab size to 2 spaces
 opt.expandtab = true
@@ -41,3 +40,14 @@ opt.ruler = true
 opt.wrap = false
 opt.incsearch = true -- incremental search
 opt.termguicolors = true
+
+opt.swapfile = false
+
+-- Navigate vim panes better
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+vim.wo.number = true
