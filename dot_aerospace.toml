@@ -157,3 +157,19 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+#
+# Window automations
+#
+
+# Always float zoom
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
+    run = 'layout floating'
+
+# Ghostty new tab workaround
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout tiling",
+]
