@@ -1,5 +1,7 @@
 packages:
   darwin:
+    taps:
+      - 'FelixKratz/formulae'
     brews:
       - 'neovim'
       - 'tmux'
@@ -11,6 +13,7 @@ packages:
       - 'lazygit'
       - 'ripgrep'
       - 'fd'
+      - 'sketchybar'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
