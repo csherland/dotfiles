@@ -13,6 +13,12 @@ packages:
       - 'fd'
     casks:
       - 'ghostty'
+      - 'nikitabobko/tap/aerospace'
+      - 'spotify'
+      - 'obsidian'
+      - 'discord'
+      - 'firefox'
+      - 'alfred'
   arch:
     pacman:
       - 'neovim'
