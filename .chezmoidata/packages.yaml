@@ -22,6 +22,7 @@ packages:
       - 'discord'
       - 'firefox'
       - 'alfred'
+      - 'font-hack-nerd-font'
   arch:
     pacman:
       - 'neovim'

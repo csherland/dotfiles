@@ -61,7 +61,7 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   8
     outer.left =       8
     outer.bottom =     8
-    outer.top =        8
+    outer.top =        38
     outer.right =      8
 
 # 'main' binding mode declaration
@@ -177,9 +177,9 @@ run= [
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
+#after-startup-command = ['exec-and-forget sketchybar']
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+#exec-on-workspace-change = ['/bin/bash', '-c',
+#    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+#]
