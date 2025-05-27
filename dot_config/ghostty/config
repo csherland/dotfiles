@@ -15,3 +15,6 @@ window-height = 60
 
 # Quick terminal
 keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# Auto-update
+auto-update = download
