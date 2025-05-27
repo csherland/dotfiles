@@ -98,7 +98,7 @@ automatically-unhide-macos-hidden-apps = false
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    alt-slash = 'layout floating tiles'
+    alt-slash = 'layout floating tiling'
     alt-comma = 'layout horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -118,16 +118,16 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
+    alt-1 = 'workspace Main'
+    alt-2 = 'workspace Message'
+    alt-3 = 'workspace Code'
+    alt-4 = 'workspace Personal'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
-    alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-1 = 'move-node-to-workspace Main'
+    alt-shift-2 = 'move-node-to-workspace Message'
+    alt-shift-3 = 'move-node-to-workspace Code'
+    alt-shift-4 = 'move-node-to-workspace Personal'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'

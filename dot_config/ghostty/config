@@ -16,5 +16,8 @@ window-height = 60
 # Quick terminal
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
-# Auto-update
+# Auto-update (automatically download)
 auto-update = download
+
+# Disable close confirmation
+confirm-close-surface = false
