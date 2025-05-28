@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPACE_ICONS=("~" ":telegram:" ":terminal:" ":google_chrome:")
+SPACE_ICONS=("~" ":messages:" ":terminal:" ":music:")
 
 SPACE=(
   icon.font="sketchybar-app-font:Regular:16.0"
