@@ -4,17 +4,18 @@
 #
 
 #theme = catppuccin-mocha
-theme = tokyonight_moon
+theme       = tokyonight_moon
 font-family = CaskaydiaCove Nerd Font
 
 # Initial window size
-window-width = 160 
+window-width  = 160
 window-height = 60
 
 #gtk-titlebar = false
 
 # Quick terminal
 keybind = global:cmd+grave_accent=toggle_quick_terminal
+quick-terminal-position = right
 
 # Auto-update (automatically download)
 auto-update = download
