@@ -23,6 +23,7 @@ packages:
       - 'firefox'
       - 'alfred'
       - 'font-hack-nerd-font'
+      - 'font-sf-pro'
   arch:
     pacman:
       - 'neovim'
