@@ -1,4 +1,3 @@
-
 function icon_map() {
   case "$1" in
   "Keynote" | "Keynote 讲演")
@@ -10,7 +9,7 @@ function icon_map() {
   "VMware Fusion")
     icon_result=":vmware_fusion:"
     ;;
-  "Alacritty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "终端" | "WezTerm")
+  "Ghostty" | "Terminal")
     icon_result=":terminal:"
     ;;
   "Microsoft To Do" | "Things")
@@ -22,19 +21,13 @@ function icon_map() {
   "App Store")
     icon_result=":app_store:"
     ;;
-  "CleanMyMac X")
-    icon_result=":desktop:"
-    ;;
-  "Android Messages")
-    icon_result=":android_messages:"
-    ;;
   "Reeder")
     icon_result=":reeder5:"
     ;;
   "Joplin")
     icon_result=":joplin:"
     ;;
-  "Discord" | "Discord Canary" | "Discord PTB")
+  "Discord")
     icon_result=":discord:"
     ;;
   "Logseq")
@@ -52,23 +45,11 @@ function icon_map() {
   "Transmit")
     icon_result=":transmit:"
     ;;
-  "Pi-hole Remote")
-    icon_result=":pihole:"
-    ;;
-  "League of Legends")
-    icon_result=":league_of_legends:"
-    ;;
   "Element")
     icon_result=":element:"
     ;;
   "Zulip")
     icon_result=":zulip:"
-    ;;
-  "Sequel Ace")
-    icon_result=":sequel_ace:"
-    ;;
-  "Zed")
-    icon_result=":zed:"
     ;;
   "TeamSpeak 3")
     icon_result=":team_speak:"
@@ -84,30 +65,6 @@ function icon_map() {
     ;;
   "Dropbox")
     icon_result=":dropbox:"
-    ;;
-  "Kakoune")
-    icon_result=":kakoune:"
-    ;;
-  "Rider" | "JetBrains Rider")
-    icon_result=":rider:"
-    ;;
-  "Godot")
-    icon_result=":godot:"
-    ;;
-  "qutebrowser")
-    icon_result=":qute_browser:"
-    ;;
-  "Typora")
-    icon_result=":text:"
-    ;;
-  "Sequel Pro")
-    icon_result=":sequel_pro:"
-    ;;
-  "Reminders" | "提醒事项")
-    icon_result=":reminders:"
-    ;;
-  "Setapp")
-    icon_result=":setapp:"
     ;;
   "Finder" | "访达")
     icon_result=":finder:"
@@ -136,23 +93,8 @@ function icon_map() {
   "Tower")
     icon_result=":tower:"
     ;;
-  "Jellyfin Media Player")
-    icon_result=":jellyfin:"
-    ;;
   "Code" | "Code - Insiders")
     icon_result=":code:"
-    ;;
-  "Linear")
-    icon_result=":linear:"
-    ;;
-  "Live")
-    icon_result=":ableton:"
-    ;;
-  "Parallels Desktop")
-    icon_result=":parallels:"
-    ;;
-  "Final Cut Pro")
-    icon_result=":final_cut_pro:"
     ;;
   "Chromium" | "Google Chrome" | "Google Chrome Canary")
     icon_result=":google_chrome:"

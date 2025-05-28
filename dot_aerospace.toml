@@ -9,7 +9,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -43,6 +43,11 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -57,12 +62,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 5
-    inner.vertical =   5
-    outer.left =       5
-    outer.bottom =     5
-    outer.top =        40
-    outer.right =      5
+    inner.horizontal = 4
+    inner.vertical =   4
+    outer.left =       4
+    outer.bottom =     4
+    outer.top =        44
+    outer.right =      4
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -118,16 +123,16 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace Main'
-    alt-2 = 'workspace Message'
-    alt-3 = 'workspace Code'
-    alt-4 = 'workspace Personal'
+    alt-1 = 'workspace 0'
+    alt-2 = 'workspace 1'
+    alt-3 = 'workspace 2'
+    alt-4 = 'workspace 3'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace Main'
-    alt-shift-2 = 'move-node-to-workspace Message'
-    alt-shift-3 = 'move-node-to-workspace Code'
-    alt-shift-4 = 'move-node-to-workspace Personal'
+    alt-shift-1 = 'move-node-to-workspace 0'
+    alt-shift-2 = 'move-node-to-workspace 1'
+    alt-shift-3 = 'move-node-to-workspace 2'
+    alt-shift-4 = 'move-node-to-workspace 3'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -174,12 +179,4 @@ run= [
   "layout tiling",
 ]
 
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
-#after-startup-command = ['exec-and-forget sketchybar']
 
-# Notify Sketchybar about workspace change
-#exec-on-workspace-change = ['/bin/bash', '-c',
-#    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-#]

@@ -24,6 +24,7 @@ packages:
       - 'alfred'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
+      - 'font-sketchybar-app-font'
   arch:
     pacman:
       - 'neovim'
