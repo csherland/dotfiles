@@ -1,21 +1,12 @@
 #!/bin/bash
 
-SPACE_ICONS=("Home" "Chat" "Code" "Web")
+SPACE_ICONS=("~" ":telegram:" ":terminal:" ":google_chrome:")
 
 SPACE=(
-  icon.padding_left=18
-  icon.padding_right=18
-  # label.padding_right=33
-  icon.color=$WHITE
-  icon.font="$FONT:ExtraBold:14.0"
-  icon.highlight_color=$WHITE
-  icon.background.draw=on
-  # background.padding_left=-8
-  # background.padding_right=-8
+  icon.font="sketchybar-app-font:Regular:16.0"
   background.color=$BG_SEC_COLR
-  background.corner_radius=10
   background.drawing=on
-  label.drawing=off
+  label.width=7
 )
 
 sketchybar --add event aerospace_workspace_change
@@ -34,7 +25,7 @@ done
 sketchybar --add item space_separator_left left \
   --set space_separator_left icon= \
   icon.font="$FONT:Bold:16.0" \
-  background.padding_left=16 \
+  background.padding_left=10 \
   background.padding_right=10 \
   label.drawing=off \
   icon.color=$DARK_WHITE
