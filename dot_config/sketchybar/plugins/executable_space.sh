@@ -1,6 +1,5 @@
 #!/bin/bash
 
-WIDTH="dynamic"
 SELECTED="false"
 HIGHLIGHT_BG="0xFF313244"
 ICON_COLOR="0xFFcdd6f4"

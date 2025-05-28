@@ -165,11 +165,17 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 #
 # Window automations
+# For common app ids see https://nikitabobko.github.io/AeroSpace/goodies#popular-apps-ids
 #
 
 # Always float zoom
 [[on-window-detected]]
     if.app-id = 'us.zoom.xos'
+    run = 'layout floating'
+
+# Always float zoom
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
     run = 'layout floating'
 
 # Ghostty new tab workaround
