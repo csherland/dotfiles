@@ -171,6 +171,9 @@ function icon_map() {
   "Microsoft Word")
     icon_result=":microsoft_word:"
     ;;
+  "Microsoft Outlook")
+    icon_result=":microsoft_outlook:"
+    ;;
   "Safari" | "Safari浏览器" | "Safari Technology Preview")
     icon_result=":safari:"
     ;;
