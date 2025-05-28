@@ -93,7 +93,7 @@ function icon_map() {
   "Tower")
     icon_result=":tower:"
     ;;
-  "Code" | "Code - Insiders")
+  "VS Code @ FB" | "VS Code @ Meta" | "Code" | "Code - Insiders")
     icon_result=":code:"
     ;;
   "Chromium" | "Google Chrome" | "Google Chrome Canary")
@@ -315,7 +315,7 @@ function icon_map() {
   "Warp")
     icon_result=":warp:"
     ;;
-  "Messages" | "信息" | "Nachrichten")
+  "Messages" | "Workchat" | "Nachrichten")
     icon_result=":messages:"
     ;;
   "Obsidian")
