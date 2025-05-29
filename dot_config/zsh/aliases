@@ -27,8 +27,12 @@ extract() {
 #=Tool configuration
 alias cp='cp -i'
 alias mv='mv -i'
-alias ll='ls --long --git'
-alias la='ls -A'
+
+# ls replacement
+alias ls='eza'
+alias l='eza --long'
+alias ll='eza --long --git'
+alias la='eza -A'
 
 #=program shortcuts
 alias cz='chezmoi'
