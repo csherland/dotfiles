@@ -39,3 +39,5 @@ packages:
       - 'ripgrep'
       - 'fd'
       - 'eza'
+      - 'zsh'
+      - 'nerd-fonts'
