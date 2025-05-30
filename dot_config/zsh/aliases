@@ -30,7 +30,7 @@ alias mv='mv -i'
 
 # ls replacement
 alias ls='eza'
-alias l='eza --long'
+alias l='eza --long -a'
 alias ll='eza --long --git'
 alias la='eza -A'
 
