@@ -8,11 +8,13 @@ To install run:
 
 ### MacOS
 ```
-````
-`````
-```
 brew install chezmoi
 chezmoi init git@github.com:csherland/dotfiles.git
 ```
 
+### Arch Linux
+```
+pacman -S chezmoi
+chezmoi init git@github.com:csherland/dotfiles.git
+```
 
