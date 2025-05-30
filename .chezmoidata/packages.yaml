@@ -15,6 +15,7 @@ packages:
       - 'fd'
       - 'sketchybar'
       - 'eza'
+      - 'bat'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
@@ -40,4 +41,6 @@ packages:
       - 'fd'
       - 'eza'
       - 'zsh'
-      - 'nerd-fonts'
+      #- 'nerd-fonts'
+      - 'bat'
+      - 'xclip'
