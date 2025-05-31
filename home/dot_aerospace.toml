@@ -64,10 +64,10 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 [gaps]
     inner.horizontal = 8
     inner.vertical =   8
-    outer.left =       6
-    outer.bottom =     6
-    outer.top =        44
-    outer.right =      6
+    outer.left =       8
+    outer.bottom =     8
+    outer.top =        8
+    outer.right =      8
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -123,16 +123,16 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 0'
-    alt-2 = 'workspace 1'
-    alt-3 = 'workspace 2'
-    alt-4 = 'workspace 3'
+    alt-1 = 'workspace Home'
+    alt-2 = 'workspace Chat'
+    alt-3 = 'workspace Code'
+    alt-4 = 'workspace Personal'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 0'
-    alt-shift-2 = 'move-node-to-workspace 1'
-    alt-shift-3 = 'move-node-to-workspace 2'
-    alt-shift-4 = 'move-node-to-workspace 3'
+    alt-shift-1 = 'move-node-to-workspace Home'
+    alt-shift-2 = 'move-node-to-workspace Chat'
+    alt-shift-3 = 'move-node-to-workspace Code'
+    alt-shift-4 = 'move-node-to-workspace Personal'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
