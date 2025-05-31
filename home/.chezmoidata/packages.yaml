@@ -45,10 +45,10 @@ packages:
       - 'nerd-fonts'
       - 'bat'
       - 'xclip'
-      - 'yay'
+      - 'fuzzel'
     yay:
       - '1password'
       - '1password-cli'
       - 'spotify'
       - 'discord'
-      - 'anyrun'
+      - 'anyrun-git'
