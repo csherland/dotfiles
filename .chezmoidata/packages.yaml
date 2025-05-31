@@ -24,6 +24,7 @@ packages:
       - 'discord'
       - 'firefox'
       - 'alfred'
+      - '1password'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
       - 'font-sketchybar-app-font'
@@ -44,6 +45,9 @@ packages:
       - 'nerd-fonts'
       - 'bat'
       - 'xclip'
+      - 'fuzzel'
     yay:
       - '1password'
       - '1password-cli'
+      - 'spotify'
+      - 'discord'
