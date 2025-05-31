@@ -16,6 +16,7 @@ packages:
       - 'sketchybar'
       - 'eza'
       - 'bat'
+      - 'zoxide'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
@@ -46,6 +47,7 @@ packages:
       - 'bat'
       - 'xclip'
       - 'fuzzel'
+      - 'zoxide'
     yay:
       - '1password'
       - '1password-cli'
