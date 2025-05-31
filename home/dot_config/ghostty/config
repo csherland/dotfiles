@@ -22,3 +22,6 @@ auto-update = download
 
 # Disable close confirmation
 confirm-close-surface = false
+
+# Fix ssh
+term=xterm-256color
