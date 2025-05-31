@@ -1,8 +1,14 @@
 {{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) -}}
 #!/usr/bin/env bash
 
-cat <<EOF | xargs -ro yay -Syu --needed --noconfirm
+cat <<EOF | xargs -ro sudo pacman -Syu --needed --noconfirm
 {{ range .packages.arch.pacman -}}
+  {{ . | quote }}
+{{ end -}}
+EOF
+
+cat <<EOF | xargs -ro yay -Syu --needed --noconfirm
+{{ range .packages.arch.yay -}}
   {{ . | quote }}
 {{ end -}}
 EOF

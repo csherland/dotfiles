@@ -41,6 +41,8 @@ packages:
       - 'fd'
       - 'eza'
       - 'zsh'
-      #- 'nerd-fonts'
+      - 'nerd-fonts'
       - 'bat'
       - 'xclip'
+    yay:
+      - '1password'
