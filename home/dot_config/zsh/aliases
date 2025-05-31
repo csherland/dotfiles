@@ -39,3 +39,10 @@ alias cz='chezmoi'
 alias vim='nvim'
 alias lgit='lazygit'
 alias cat='bat'
+
+# git aliases
+alais gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gc='git commit -m'
+alias gp='git push'
