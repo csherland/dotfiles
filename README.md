@@ -5,16 +5,7 @@ My dotfiles, managed by chezmoi
 Usage
 -----
 To install run:
-
-### MacOS
 ```
-brew install chezmoi
-chezmoi init git@github.com:csherland/dotfiles.git
-```
-
-### Arch Linux
-```
-pacman -S chezmoi
-chezmoi init git@github.com:csherland/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply csherland
 ```
 
