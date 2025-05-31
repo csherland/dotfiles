@@ -22,11 +22,10 @@ fi
 # Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add Powerlevel10k
-zinit ice depth=1 
-zinit light romkatv/powerlevel10k
+#zinit light romkatv/powerlevel10k
 
 # Plugins
+zinit ice depth=1 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -61,6 +60,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Shell integrations
+eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 

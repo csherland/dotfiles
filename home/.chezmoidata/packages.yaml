@@ -17,6 +17,7 @@ packages:
       - 'eza'
       - 'bat'
       - 'zoxide'
+      - 'starship'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
@@ -48,6 +49,7 @@ packages:
       - 'xclip'
       - 'fuzzel'
       - 'zoxide'
+      - 'starship'
     yay:
       - '1password'
       - '1password-cli'
