@@ -1,0 +1,24 @@
+add_newline = false
+
+[git_branch]
+symbol = "\uf418 "
+
+[git_state]
+merge = "\uf419 "
+cherry_pick = "🍒 PICKING"
+revert = "⏪"
+rebase = "🔀"
+
+[git_status]
+prefix = ""
+suffix = ""
+conflicted = "\uf440 "
+ahead = "🚀 "
+behind = "🐢 "
+diverged = "\uf493 "
+untracked = "\uf474 "
+stashed = "\uf472 "
+modified = "\uf459 "
+staged = "\uf457 "
+renamed = "\uf45a "
+deleted = "\uf458 "
