@@ -41,7 +41,7 @@ alias lgit='lazygit'
 alias cat='bat'
 
 # git aliases
-alais gs='git status'
+alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
 alias gc='git commit -m'
