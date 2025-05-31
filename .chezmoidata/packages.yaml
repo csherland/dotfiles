@@ -46,3 +46,4 @@ packages:
       - 'xclip'
     yay:
       - '1password'
+      - '1password-cli'
