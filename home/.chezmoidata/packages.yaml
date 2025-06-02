@@ -27,6 +27,7 @@ packages:
       - 'firefox'
       - 'alfred'
       - '1password'
+      - 'tailscale'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
       - 'font-sketchybar-app-font'
