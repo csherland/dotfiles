@@ -1,7 +1,6 @@
 packages:
   darwin:
     taps:
-      - 'FelixKratz/formulae'
     brews:
       - 'neovim'
       - 'tmux'
@@ -13,7 +12,6 @@ packages:
       - 'lazygit'
       - 'ripgrep'
       - 'fd'
-      - 'sketchybar'
       - 'eza'
       - 'bat'
       - 'zoxide'
@@ -30,7 +28,6 @@ packages:
       - 'tailscale'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
-      - 'font-sketchybar-app-font'
   arch:
     pacman:
       - 'neovim'
