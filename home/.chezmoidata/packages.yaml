@@ -17,6 +17,7 @@ packages:
       - 'zoxide'
       - 'starship'
       - 'chezmoi'
+      - 'btop'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
