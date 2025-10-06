@@ -25,3 +25,5 @@ confirm-close-surface = false
 
 # Fix ssh
 term=xterm-256color
+
+background-opacity = 0.8
