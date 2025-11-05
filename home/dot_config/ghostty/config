@@ -4,7 +4,6 @@
 #
 
 theme = catppuccin-mocha.conf
-#theme       = tokyonight_moon
 font-family = CaskaydiaCove Nerd Font
 
 # Initial window size
