@@ -14,3 +14,7 @@ vim.keymap.set("n", "<C-x>", ":bp<CR>:bd #<CR>", { remap = true, desc = "Close b
 -- copilot
 vim.keymap.set("n", "<leader>cpd", ":Copilot disable<cr>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>cpe", ":Copilot enable<cr>", { silent = true, noremap = true })
+
+-- Keep visual selection when indenting
+vim.keymap.set("x", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("x", ">", ">gv", { desc = "Indent right and reselect" })
