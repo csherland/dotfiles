@@ -18,6 +18,7 @@ packages:
       - 'starship'
       - 'chezmoi'
       - 'btop'
+      - 'ranger'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
@@ -67,6 +68,7 @@ packages:
       - 'unzip'
       - 'rofi'
       - 'hyprpaper'
+      - 'ranger'
     yay:
       - '1password'
       - '1password-cli'
