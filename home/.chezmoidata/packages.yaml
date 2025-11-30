@@ -19,6 +19,9 @@ packages:
       - 'chezmoi'
       - 'btop'
       - 'ranger'
+      - 'codex'
+      - 'claude-code'
+      - 'gh'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
