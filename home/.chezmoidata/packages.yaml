@@ -19,8 +19,6 @@ packages:
       - 'chezmoi'
       - 'btop'
       - 'ranger'
-      - 'codex'
-      - 'claude-code'
       - 'gh'
     casks:
       - 'ghostty'
@@ -34,6 +32,8 @@ packages:
       - 'tailscale'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
+      - 'codex'
+      - 'claude-code'
   arch:
     pacman:
       - 'neovim'
