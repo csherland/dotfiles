@@ -51,7 +51,8 @@ source $HOME/.config/zsh/env
 #zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
+#zstyle ':completion:*' menu yes
+zstyle ':completion:*' fzf-search-display true c
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -59,7 +60,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes Completion styling
 
 # Shell integrations
 eval "$(starship init zsh)"
-#eval "$(fzf --zsh)"
+eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 

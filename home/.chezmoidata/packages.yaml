@@ -34,6 +34,7 @@ packages:
       - 'font-sf-pro'
       - 'codex'
       - 'claude-code'
+      - 'raycast'
   arch:
     pacman:
       - 'neovim'
