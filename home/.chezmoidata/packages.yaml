@@ -29,10 +29,9 @@ packages:
       - 'firefox'
       - 'alfred'
       - '1password'
-      - 'tailscale'
+      - 'tailscale-app'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
-      - 'codex'
       - 'claude-code'
       - 'raycast'
   arch:

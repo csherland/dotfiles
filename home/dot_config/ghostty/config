@@ -26,3 +26,4 @@ confirm-close-surface = false
 term=xterm-256color
 
 background-opacity = 0.8
+keybind = shift+enter=text:\x1b\r
