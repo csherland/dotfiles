@@ -48,10 +48,9 @@ source $HOME/.config/zsh/aliases
 source $HOME/.config/zsh/keybinds
 source $HOME/.config/zsh/env
 
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-#zstyle ':completion:*' menu yes
+zstyle ':completion:*' menu yes
 zstyle ':completion:*' fzf-search-display true c
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
