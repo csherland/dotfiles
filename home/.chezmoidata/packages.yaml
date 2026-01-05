@@ -27,7 +27,6 @@ packages:
       - 'obsidian'
       - 'discord'
       - 'firefox'
-      - 'alfred'
       - '1password'
       - 'tailscale-app'
       - 'font-hack-nerd-font'
