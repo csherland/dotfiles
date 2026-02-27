@@ -30,7 +30,6 @@ packages:
       - 'tailscale-app'
       - 'font-hack-nerd-font'
       - 'font-sf-pro'
-      - 'claude-code'
       - 'raycast'
   arch:
     pacman:
