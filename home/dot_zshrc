@@ -64,6 +64,9 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# Remove zoxide's completer so fzf's **<TAB> works for cd
+compdef -d cd  
+
 # Local zshrc for things that shouldn't be in source control
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
