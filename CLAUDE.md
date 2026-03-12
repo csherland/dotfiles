@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal dotfiles managed by [chezmoi](https://www.chezmoi.io/). Targets two platforms: **macOS (darwin)** and **Arch Linux**. The source of truth lives in `home/` and gets applied to `~` via chezmoi.
+Personal dotfiles managed by [chezmoi](https://www.chezmoi.io/). Targets **macOS (darwin)** only. The source of truth lives in `home/` and gets applied to `~` via chezmoi.
 
 ## Chezmoi Commands
 
@@ -24,7 +24,7 @@ All managed files live under `home/`. Chezmoi uses naming conventions to control
 - **`dot_`** prefix → maps to `.` (e.g., `dot_zshrc` → `~/.zshrc`)
 - **`.tmpl`** suffix → Go template, rendered with chezmoi data
 - **`executable_`** prefix → file gets chmod +x on apply
-- **`home/.chezmoidata/packages.yaml`** → Package lists for both platforms (brew/cask for macOS, pacman/yay for Arch)
+- **`home/.chezmoidata/packages.yaml`** → Package lists (brew/cask for macOS)
 - **`home/.chezmoiscripts/`** → Run scripts triggered by chezmoi (install packages, set macOS defaults, change shell)
 - **`home/.chezmoitemplates/`** → Reusable template fragments (shared `ask_user`/`command_exists` helpers)
 - **`home/.chezmoi.toml.tmpl`** → Prompts for git `email` and `name` on `chezmoi init`
@@ -41,18 +41,16 @@ All managed files live under `home/`. Chezmoi uses naming conventions to control
 | `~/.config/ghostty/` | `dot_config/ghostty/` | Terminal emulator config with catppuccin themes |
 | `~/.tmux.conf` | `dot_tmux.conf` | TPM pulled via `.chezmoiexternal.toml` |
 | `~/.aerospace.toml` | `dot_aerospace.toml` | macOS tiling window manager |
-| `~/.config/hypr/` | `dot_config/hypr/` | Hyprland (Arch only) |
-| `~/.config/waybar/` | `dot_config/waybar/` | Status bar for Hyprland |
 | `~/.config/sketchybar/` | `dot_config/sketchybar/` | macOS menu bar replacement |
 | `~/.config/zsh/` | `dot_config/zsh/` | Shell aliases, env vars, keybinds (sourced by `.zshrc`) |
 
 ## Platform Conditionals
 
-Scripts and templates use `{{ if eq .chezmoi.os "darwin" }}` or `{{ if eq .chezmoi.osRelease.id "arch" }}` guards. When editing `.tmpl` files, preserve these conditionals.
+Scripts and templates use `{{ if eq .chezmoi.os "darwin" }}` guards. When editing `.tmpl` files, preserve these conditionals.
 
 ## Adding Packages
 
-Add to `home/.chezmoidata/packages.yaml` under the appropriate section (`darwin.brews`, `darwin.casks`, `arch.pacman`, `arch.yay`). The `run_onchange_*-install-packages.sh.tmpl` scripts will auto-install on next `chezmoi apply`.
+Add to `home/.chezmoidata/packages.yaml` under the appropriate section (`darwin.brews`, `darwin.casks`). The `run_onchange_*-install-packages.sh.tmpl` scripts will auto-install on next `chezmoi apply`.
 
 ## Shell Aliases (for reference)
 
