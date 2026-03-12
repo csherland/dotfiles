@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal dotfiles managed by [chezmoi](https://www.chezmoi.io/). Targets two platforms: **macOS (darwin)** and **Arch Linux**. The source of truth lives in `home/` and gets applied to `~` via chezmoi.
 
+Bootstrap on a new machine: `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply csherland`
+
 ## Chezmoi Commands
 
 ```bash
@@ -25,8 +27,9 @@ All managed files live under `home/`. Chezmoi uses naming conventions to control
 - **`.tmpl`** suffix → Go template, rendered with chezmoi data
 - **`executable_`** prefix → file gets chmod +x on apply
 - **`home/.chezmoidata/packages.yaml`** → Package lists for both platforms (brew/cask for macOS, pacman/yay for Arch)
-- **`home/.chezmoiscripts/`** → Run scripts triggered by chezmoi (install packages, set macOS defaults, change shell)
-- **`home/.chezmoitemplates/`** → Reusable template fragments (shared `ask_user`/`command_exists` helpers)
+- **`home/.chezmoiscripts/`** → Run scripts triggered by chezmoi. Naming controls execution order: `run_once_before_` → `run_onchange_` → `run_once_after_`. `run_once` scripts run only on first init; `run_onchange` re-runs when the script content (after template rendering) changes.
+- **`home/.chezmoitemplates/`** → Reusable template fragments (shared `ask_user`/`command_exists` helpers in `scripts-library.sh`). Included in scripts via `{{ include (joinPath .chezmoi.sourceDir ".chezmoitemplates/scripts-library.sh") }}`
+- **`home/.chezmoidata/1password.toml`** → Secrets template data (e.g., API keys) sourced from 1Password
 - **`home/.chezmoi.toml.tmpl`** → Prompts for git `email` and `name` on `chezmoi init`
 - **`home/.chezmoiexternal.toml`** → External dependencies (currently: tmux plugin manager)
 - **`home/.chezmoiignore`** → Files excluded from apply (neovim plugin dirs, repo metadata)
@@ -53,6 +56,10 @@ Scripts and templates use `{{ if eq .chezmoi.os "darwin" }}` or `{{ if eq .chezm
 ## Adding Packages
 
 Add to `home/.chezmoidata/packages.yaml` under the appropriate section (`darwin.brews`, `darwin.casks`, `arch.pacman`, `arch.yay`). The `run_onchange_*-install-packages.sh.tmpl` scripts will auto-install on next `chezmoi apply`.
+
+## Machine-Local Overrides
+
+`~/.zshrc.local` is sourced at the end of `.zshrc` if it exists — use it for machine-specific config that shouldn't be in source control.
 
 ## Shell Aliases (for reference)
 
