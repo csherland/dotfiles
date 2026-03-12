@@ -4,11 +4,11 @@
 #
 
 theme = catppuccin-mocha.conf
-font-family = CaskaydiaCove Nerd Font
+font-family = JetBrainsMono Nerd Font
 
 # Initial window size
 window-width  = 160
-window-height = 60
+window-height = 80
 
 #gtk-titlebar = false
 
@@ -25,5 +25,8 @@ confirm-close-surface = false
 # Fix ssh
 term=xterm-256color
 
-background-opacity = 0.8
+background-opacity = 0.9
+
 keybind = shift+enter=text:\x1b\r
+
+macos-option-as-alt = true
