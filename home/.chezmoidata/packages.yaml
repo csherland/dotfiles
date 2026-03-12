@@ -1,7 +1,6 @@
 packages:
   darwin:
     taps:
-      - 'homebrew/cask-fonts'
     brews:
       - 'neovim'
       - 'tmux'
