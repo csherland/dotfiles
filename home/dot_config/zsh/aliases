@@ -1,16 +1,15 @@
 # aliases
 
-#=Tool configuration
+# Tool configuration
 alias cp='cp -i'
 alias mv='mv -i'
 
 # ls replacement
 alias ls='eza'
-alias l='eza --long -a'
-alias ll='eza --long --git'
+alias l='eza --long --git -a'
 alias la='eza -A'
 
-#=program shortcuts
+# program shortcuts
 alias cz='chezmoi'
 alias vim='nvim'
 alias lgit='lazygit'
@@ -22,3 +21,8 @@ alias ga='git add'
 alias gd='git diff'
 alias gc='git commit -m'
 alias gp='git push'
+
+# shortcuts
+alias ..="cd .."
+alias cl='clear'
+
