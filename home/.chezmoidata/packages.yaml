@@ -17,7 +17,6 @@ packages:
       - 'starship'
       - 'chezmoi'
       - 'btop'
-      - 'ranger'
       - 'gh'
     casks:
       - 'ghostty'
@@ -28,6 +27,3 @@ packages:
       - 'firefox'
       - '1password'
       - 'tailscale-app'
-      - 'font-hack-nerd-font'
-      - 'font-sf-pro'
-      - 'raycast'
