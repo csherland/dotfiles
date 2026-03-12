@@ -10,6 +10,9 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Prevent zsh-vi-mode from overwriting fzf keybindings
+ZVM_INIT_MODE=sourcing
+
 # Set directory for zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -50,17 +53,16 @@ source $HOME/.config/zsh/env
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu yes
-zstyle ':completion:*' fzf-search-display true c
+zstyle ':completion:*' fzf-search-display true
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes Completion styling
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Shell integrations
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-source <(fzf --zsh)
 
 # Local zshrc for things that shouldn't be in source control
 if [ -f ~/.zshrc.local ]; then

@@ -1,6 +1,13 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
+# Ensure brew is on PATH (Apple Silicon installs to /opt/homebrew)
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 {{ include (joinPath .chezmoi.sourceDir ".chezmoitemplates/scripts-library.sh") -}}
 
 {{ $current_shell := env "SHELL" -}}

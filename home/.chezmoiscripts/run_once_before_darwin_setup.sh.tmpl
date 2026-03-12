@@ -2,8 +2,17 @@
 #!/bin/bash
 
 # Check to see if Homebrew is installed, and install it if it is not
-command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew Now"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Ensure brew is on PATH for subsequent scripts (Apple Silicon installs to /opt/homebrew)
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 {{ end -}}
 

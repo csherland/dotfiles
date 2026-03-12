@@ -1,6 +1,7 @@
 packages:
   darwin:
     taps:
+      - 'homebrew/cask-fonts'
     brews:
       - 'neovim'
       - 'tmux'
@@ -27,3 +28,4 @@ packages:
       - 'firefox'
       - '1password'
       - 'tailscale-app'
+      - 'font-caskaydia-cove-nerd-font'
