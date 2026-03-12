@@ -7,12 +7,12 @@ alias mv='mv -i'
 # ls replacement
 alias ls='eza'
 alias l='eza --long --git -a'
-alias la='eza -A'
 
 # program shortcuts
 alias cz='chezmoi'
+alias lg='lazygit'
+alias rr='ranger'
 alias vim='nvim'
-alias lgit='lazygit'
 alias cat='bat'
 
 # git aliases
