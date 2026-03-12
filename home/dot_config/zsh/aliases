@@ -6,7 +6,8 @@ alias mv='mv -i'
 
 # ls replacement
 alias ls='eza'
-alias l='eza --long --git -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias l='eza --long --icons --git -a'
 
 # program shortcuts
 alias cz='chezmoi'
