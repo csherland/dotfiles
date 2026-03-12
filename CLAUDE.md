@@ -4,58 +4,61 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal dotfiles managed by [chezmoi](https://www.chezmoi.io/). Targets two platforms: **macOS (darwin)** and **Arch Linux**. The source of truth lives in `home/` and gets applied to `~` via chezmoi.
+Personal dotfiles managed by **nix-darwin + home-manager** via Nix flakes. Targets **macOS (darwin)**.
 
-Bootstrap on a new machine: `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply csherland`
+- **nix-darwin** → system-level: macOS defaults, system packages, Homebrew cask management
+- **home-manager** (as nix-darwin module) → user-level: dotfiles, user packages, shell config
 
-## Chezmoi Commands
+Bootstrap on a new machine: `./setup.sh`
 
-```bash
-chezmoi apply              # Apply all changes to home directory
-chezmoi diff               # Preview what would change
-chezmoi add ~/.<file>      # Add a new dotfile to source control
-chezmoi edit ~/.<file>     # Edit a managed file (opens source copy)
-chezmoi cd                 # cd into this source directory
-chezmoi data               # Show template data (email, name, OS, etc.)
-```
+Rebuild after changes: `darwin-rebuild switch --flake .`
 
 ## Repository Layout
 
-All managed files live under `home/`. Chezmoi uses naming conventions to control behavior:
+```
+flake.nix                     # Flake entry point (nix-darwin + home-manager inputs)
+nix/darwin/
+  default.nix                 # nix-darwin config, imports homebrew + system
+  homebrew.nix                # Declarative cask/tap management
+  system.nix                  # macOS defaults (replaces `defaults write` scripts)
+home/
+  default.nix                 # home-manager entry, imports modules, maps dotfiles
+  shell.nix                   # zsh config, aliases, env, keybinds, plugins
+  git.nix                     # git config (user, ignores, settings)
+  packages.nix                # user-level CLI packages (neovim, tmux, fzf, etc.)
+  dotfiles/                   # Raw config files placed via home.file
+    nvim/                     # LazyVim config (lua files)
+    ghostty/                  # Terminal emulator config + catppuccin themes
+    sketchybar/               # macOS menu bar replacement
+    tmux/                     # Tmux helper scripts + remote config
+    fastfetch/                # Fastfetch config
+    aerospace.toml            # macOS tiling window manager
+    tmux.conf                 # Tmux config
+    starship.toml             # Starship prompt config
+    vimrc                     # Vim fallback config
+    gitignore                 # Global gitignore (referenced by git.nix)
+setup.sh                      # Bootstrap script for fresh machines
+```
 
-- **`dot_`** prefix → maps to `.` (e.g., `dot_zshrc` → `~/.zshrc`)
-- **`.tmpl`** suffix → Go template, rendered with chezmoi data
-- **`executable_`** prefix → file gets chmod +x on apply
-- **`home/.chezmoidata/packages.yaml`** → Package lists for both platforms (brew/cask for macOS, pacman/yay for Arch)
-- **`home/.chezmoiscripts/`** → Run scripts triggered by chezmoi. Naming controls execution order: `run_once_before_` → `run_onchange_` → `run_once_after_`. `run_once` scripts run only on first init; `run_onchange` re-runs when the script content (after template rendering) changes.
-- **`home/.chezmoitemplates/`** → Reusable template fragments (shared `ask_user`/`command_exists` helpers in `scripts-library.sh`). Included in scripts via `{{ include (joinPath .chezmoi.sourceDir ".chezmoitemplates/scripts-library.sh") }}`
-- **`home/.chezmoidata/1password.toml`** → Secrets template data (e.g., API keys) sourced from 1Password
-- **`home/.chezmoi.toml.tmpl`** → Prompts for git `email` and `name` on `chezmoi init`
-- **`home/.chezmoiexternal.toml`** → External dependencies (currently: tmux plugin manager)
-- **`home/.chezmoiignore`** → Files excluded from apply (neovim plugin dirs, repo metadata)
+## Key Configs
 
-## Key Managed Configs
-
-| Target path | Source file | Notes |
+| Target path | Source | Notes |
 |---|---|---|
-| `~/.zshrc` | `dot_zshrc` | Zinit plugin manager, starship prompt, fzf, zoxide |
-| `~/.gitconfig` | `dot_gitconfig.tmpl` | Template — uses `{{ .email }}` and `{{ .name }}` |
-| `~/.config/nvim/` | `dot_config/nvim/` | LazyVim-based neovim config (lazy.nvim plugin manager) |
-| `~/.config/ghostty/` | `dot_config/ghostty/` | Terminal emulator config with catppuccin themes |
-| `~/.tmux.conf` | `dot_tmux.conf` | TPM pulled via `.chezmoiexternal.toml` |
-| `~/.aerospace.toml` | `dot_aerospace.toml` | macOS tiling window manager |
-| `~/.config/hypr/` | `dot_config/hypr/` | Hyprland (Arch only) |
-| `~/.config/waybar/` | `dot_config/waybar/` | Status bar for Hyprland |
-| `~/.config/sketchybar/` | `dot_config/sketchybar/` | macOS menu bar replacement |
-| `~/.config/zsh/` | `dot_config/zsh/` | Shell aliases, env vars, keybinds (sourced by `.zshrc`) |
-
-## Platform Conditionals
-
-Scripts and templates use `{{ if eq .chezmoi.os "darwin" }}` or `{{ if eq .chezmoi.osRelease.id "arch" }}` guards. When editing `.tmpl` files, preserve these conditionals.
+| `~/.zshrc` | `home/shell.nix` | Generated by home-manager; zinit, starship, fzf, zoxide |
+| `~/.gitconfig` | `home/git.nix` | Generated by home-manager |
+| `~/.config/nvim/` | `home/dotfiles/nvim/` | Symlinked by home-manager |
+| `~/.config/ghostty/` | `home/dotfiles/ghostty/` | Symlinked by home-manager |
+| `~/.tmux.conf` | `home/dotfiles/tmux.conf` | Symlinked by home-manager |
+| `~/.aerospace.toml` | `home/dotfiles/aerospace.toml` | Symlinked by home-manager |
+| `~/.config/sketchybar/` | `home/dotfiles/sketchybar/` | Symlinked by home-manager |
 
 ## Adding Packages
 
-Add to `home/.chezmoidata/packages.yaml` under the appropriate section (`darwin.brews`, `darwin.casks`, `arch.pacman`, `arch.yay`). The `run_onchange_*-install-packages.sh.tmpl` scripts will auto-install on next `chezmoi apply`.
+- **CLI tools**: Add to `home/packages.nix` under `home.packages`
+- **GUI apps (casks)**: Add to `nix/darwin/homebrew.nix` under `casks`
+- **macOS defaults**: Add to `nix/darwin/system.nix`
+
+Then run `darwin-rebuild switch --flake .`
 
 ## Machine-Local Overrides
 
@@ -63,4 +66,4 @@ Add to `home/.chezmoidata/packages.yaml` under the appropriate section (`darwin.
 
 ## Shell Aliases (for reference)
 
-`cz`=chezmoi, `vim`=nvim, `lgit`=lazygit, `ls`=eza, `cat`=bat, `gs`/`ga`/`gd`/`gc`/`gp` for common git operations.
+`vim`=nvim, `lgit`=lazygit, `ls`=eza, `cat`=bat, `gs`/`ga`/`gd`/`gc`/`gp` for common git operations.
