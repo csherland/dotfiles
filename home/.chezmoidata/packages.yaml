@@ -19,7 +19,8 @@ packages:
       - 'chezmoi'
       - 'btop'
       - 'gh'
-      - 'ranger'
+      - 'yazi'
+      - 'carapace'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'

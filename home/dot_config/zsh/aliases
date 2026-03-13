@@ -12,7 +12,16 @@ alias l='eza --long --icons --git -a'
 # program shortcuts
 alias cz='chezmoi'
 alias lg='lazygit'
-alias rr='ranger'
+# yazi wrapper - cd into last browsed directory on quit
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+alias rr='y'
 alias vim='nvim'
 alias cat='bat'
 

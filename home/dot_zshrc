@@ -28,7 +28,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Plugins
 zinit ice depth=1 
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light jeffreytse/zsh-vi-mode
 zinit light Aloxaf/fzf-tab
@@ -37,7 +36,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::docker
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -56,14 +54,14 @@ zstyle ':completion:*' menu yes
 zstyle ':completion:*' fzf-search-display true
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
-
 # Shell integrations
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace zsh)
 
 # Remove zoxide's completer so fzf's **<TAB> works for cd
 compdef -d cd  
