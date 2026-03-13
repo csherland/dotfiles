@@ -53,12 +53,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu yes
 zstyle ':completion:*' fzf-search-display true
-# Catppuccin Mocha completion styling
-zstyle ':completion:*:descriptions' format $'\e[38;5;243m-- %d --\e[m'
-zstyle ':completion:*:messages' format $'\e[38;2;166;227;161m-- %d --\e[m'
 zstyle ':completion:*:warnings' format $'\e[38;2;243;139;168mNo matches for: %d\e[m'
-zstyle ':completion:*' group-name ''
-zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpath'
 # Shell integrations
