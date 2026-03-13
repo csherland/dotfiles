@@ -20,5 +20,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Fix fzf keybinds conflict with vim mode plugin
+ZVM_INIT_MODE=sourcing
+
+# Use ~/.config/colima instead of ~/.colima
+export COLIMA_HOME="$HOME/.config/colima"
+
 # Add .local/bin to path
 export PATH="$HOME/.local/bin:$PATH"

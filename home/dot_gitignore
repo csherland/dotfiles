@@ -72,3 +72,8 @@ xcuserdata/
 # nodejs #
 ##########
 node_modules/
+
+#################
+# Coding Agents #
+#################
+.claude/
