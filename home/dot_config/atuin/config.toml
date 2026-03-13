@@ -1,0 +1,28 @@
+# Atuin - shell history
+
+## Search UX
+style = "compact"
+inline_height = 30
+show_preview = true
+show_help = false
+
+## Search behavior
+search_mode = "fuzzy"
+filter_mode = "directory"
+filter_mode_shell_up_key_binding = "directory"
+
+## Privacy
+history_filter = [
+  "^export.*TOKEN",
+  "^export.*SECRET",
+  "^export.*KEY",
+  "^export.*PASSWORD",
+]
+
+## Quality of life
+update_check = false
+enter_accept = true
+keymap_mode = "vim-normal"
+
+## Disable sync
+sync_frequency = "0"
