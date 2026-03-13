@@ -1,15 +1,15 @@
 # Atuin - shell history
 
 ## Search UX
-style = "compact"
+style = "full"
 inline_height = 30
 show_preview = true
-show_help = false
+show_help = true
+show_tabs = false
+time_format = ""
 
 ## Search behavior
 search_mode = "fuzzy"
-filter_mode = "directory"
-filter_mode_shell_up_key_binding = "directory"
 
 ## Privacy
 history_filter = [
