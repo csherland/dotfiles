@@ -1,3 +1,3 @@
-# Keybindings
+# Keybindings (atuin may rebind these — check `bindkey '^p'` if they stop working)
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
