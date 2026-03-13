@@ -15,6 +15,7 @@ packages:
       - 'bat'
       - 'zoxide'
       - 'starship'
+      - 'atuin'
       - 'chezmoi'
       - 'btop'
       - 'gh'

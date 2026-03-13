@@ -63,6 +63,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"
 
 # Remove zoxide's completer so fzf's **<TAB> works for cd
 compdef -d cd  
