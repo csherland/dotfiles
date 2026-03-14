@@ -24,6 +24,8 @@ function y() {
 alias rr='y'
 alias vim='nvim'
 alias cat='bat'
+alias top='btop'
+alias htop='btop'
 
 # git aliases
 alias gs='git status'

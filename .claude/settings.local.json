@@ -5,7 +5,9 @@
       "Bash(carapace _carapace zsh 2>/dev/null | head -80)",
       "Bash(carapace vim:*)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Skill(commit-commands:commit-push-pr)",
+      "Bash(git checkout:*)"
     ]
   }
 }
