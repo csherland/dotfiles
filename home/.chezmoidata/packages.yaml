@@ -20,7 +20,6 @@ packages:
       - 'btop'
       - 'gh'
       - 'yazi'
-      - 'carapace'
     casks:
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'

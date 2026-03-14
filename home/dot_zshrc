@@ -51,8 +51,7 @@ source $HOME/.config/zsh/env
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu yes
-zstyle ':completion:*' fzf-search-display true
+zstyle ':completion:*' menu no
 zstyle ':completion:*:warnings' format $'\e[38;2;243;139;168mNo matches for: %d\e[m'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpath'
@@ -61,12 +60,8 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
-export CARAPACE_BRIDGES='zsh'
-
-source <(carapace _carapace zsh)
-
 # Remove zoxide's completer so fzf's **<TAB> works for cd
-compdef -d cd  
+compdef -d cd
 
 # Local zshrc for things that shouldn't be in source control
 if [ -f ~/.zshrc.local ]; then

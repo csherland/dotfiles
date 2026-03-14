@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -d /Users/christiansherland/.local/share/chezmoi/home/dot_config/*/)",
+      "Bash(carapace _carapace zsh 2>/dev/null | head -80)",
+      "Bash(carapace vim:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}
