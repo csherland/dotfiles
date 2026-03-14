@@ -25,3 +25,8 @@ export COLIMA_HOME="$HOME/.config/colima"
 
 # Add .local/bin to path
 export PATH="$HOME/.local/bin:$PATH"
+
+# Auto-attach to tmux on SSH login
+if [[ -n "$SSH_CLIENT" ]] && [[ -z "$TMUX" ]]; then
+  tmux new-session -A -s main
+fi
