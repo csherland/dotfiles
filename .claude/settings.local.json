@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+<<<<<<< HEAD
       "Bash(ls -d /Users/christiansherland/.local/share/chezmoi/home/dot_config/*/)",
       "Bash(carapace _carapace zsh 2>/dev/null | head -80)",
       "Bash(carapace vim:*)",
@@ -8,6 +9,9 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Skill(commit-commands:commit-push-pr)",
       "Bash(git checkout:*)"
+=======
+      "Bash(chezmoi apply:*)"
+>>>>>>> 6fdc3a3 (Claude updates?)
     ]
   }
 }
