@@ -3,7 +3,10 @@
     "allow": [
       "Bash(chezmoi:*)",
       "Bash(brew:*)",
-      "Bash(zsh:*)"
+      "Bash(zsh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
