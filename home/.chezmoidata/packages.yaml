@@ -21,6 +21,7 @@ packages:
       - 'gh'
       - 'yazi'
     casks:
+      - 'alfred'
       - 'ghostty'
       - 'nikitabobko/tap/aerospace'
       - 'spotify'
