@@ -15,7 +15,7 @@ return {
     return {
       options = {
         theme = "auto",
-        globalstatus = vim.o.laststatus == 3,
+        globalstatus = true,
         section_separators = { left = "\u{e0b4}", right = "\u{e0b6}" },
         component_separators = { left = "\u{e0b5}", right = "\u{e0b7}" },
         disabled_filetypes = { statusline = { "dashboard", "snacks_dashboard" } },
@@ -67,7 +67,7 @@ return {
           end,
         },
       },
-      extensions = { "lazy", "fzf" },
+      extensions = { "lazy", "fzf", "neo-tree" },
     }
   end,
 }

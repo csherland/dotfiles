@@ -44,8 +44,7 @@ return {
       -- Diagnostic keymaps
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
-      vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-      vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics list" })
+      vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostic" })
 
       -- LSP keymaps (set on attach)
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -62,7 +61,7 @@ return {
           map("n", "gr", vim.lsp.buf.references, "Show references")
           map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
           map("n", "K", vim.lsp.buf.hover, "Hover docs")
-          map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
+          -- rename handled by inc-rename.nvim
           map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
           map("n", "<leader>D", vim.lsp.buf.type_definition, "Type definition")
 
