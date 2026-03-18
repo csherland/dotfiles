@@ -27,7 +27,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
 zinit ice depth=1 wait lucid
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice wait lucid
+zinit light zsh-users/zsh-completions
 zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
 zinit light jeffreytse/zsh-vi-mode
