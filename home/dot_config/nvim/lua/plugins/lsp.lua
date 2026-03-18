@@ -1,4 +1,15 @@
 return {
+  -- Lua/Neovim dev: completions for vim.* API
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+
   -- Mason: manage LSP servers, linters, formatters
   {
     "williamboman/mason.nvim",
@@ -42,6 +53,7 @@ return {
         group = vim.api.nvim_create_augroup("lsp_attach", { clear = true }),
         callback = function(event)
           local buf = event.buf
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
           local map = function(mode, lhs, rhs, desc)
             vim.keymap.set(mode, lhs, rhs, { buffer = buf, desc = desc })
           end
@@ -54,6 +66,15 @@ return {
           map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
           map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
           map("n", "<leader>D", vim.lsp.buf.type_definition, "Type definition")
+
+          -- Disable LSP formatting when conform handles it
+          if client then
+            local conform_fts = { "lua", "javascript", "typescript", "typescriptreact" }
+            if vim.tbl_contains(conform_fts, vim.bo[buf].filetype) then
+              client.server_capabilities.documentFormattingProvider = false
+              client.server_capabilities.documentRangeFormattingProvider = false
+            end
+          end
         end,
       })
 
