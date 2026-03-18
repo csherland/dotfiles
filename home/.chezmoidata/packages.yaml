@@ -19,6 +19,7 @@ packages:
       - 'chezmoi'
       - 'btop'
       - 'gh'
+      - 'node'
       - 'yazi'
     casks:
       - 'alfred'
