@@ -24,7 +24,16 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "ts_ls",
+        "vtsls",
+        "bashls",
+        "jsonls",
+        "yamlls",
+        "html",
+        "cssls",
+        "pyright",
+        "gopls",
+        "rust_analyzer",
+        "dockerls",
       },
     },
   },
@@ -67,7 +76,7 @@ return {
 
           -- Disable LSP formatting when conform handles it
           if client then
-            local conform_fts = { "lua", "javascript", "typescript", "typescriptreact" }
+            local conform_fts = { "lua", "javascript", "typescript", "typescriptreact", "javascriptreact" }
             if vim.tbl_contains(conform_fts, vim.bo[buf].filetype) then
               client.server_capabilities.documentFormattingProvider = false
               client.server_capabilities.documentRangeFormattingProvider = false
@@ -87,11 +96,30 @@ return {
         },
       })
 
-      vim.lsp.config("ts_ls", {
-        capabilities = capabilities,
-      })
+      vim.lsp.config("vtsls", { capabilities = capabilities })
+      vim.lsp.config("bashls", { capabilities = capabilities })
+      vim.lsp.config("jsonls", { capabilities = capabilities })
+      vim.lsp.config("yamlls", { capabilities = capabilities })
+      vim.lsp.config("html", { capabilities = capabilities })
+      vim.lsp.config("cssls", { capabilities = capabilities })
+      vim.lsp.config("pyright", { capabilities = capabilities })
+      vim.lsp.config("gopls", { capabilities = capabilities })
+      vim.lsp.config("rust_analyzer", { capabilities = capabilities })
+      vim.lsp.config("dockerls", { capabilities = capabilities })
 
-      vim.lsp.enable({ "lua_ls", "ts_ls" })
+      vim.lsp.enable({
+        "lua_ls",
+        "vtsls",
+        "bashls",
+        "jsonls",
+        "yamlls",
+        "html",
+        "cssls",
+        "pyright",
+        "gopls",
+        "rust_analyzer",
+        "dockerls",
+      })
 
       -- Disable stylua LSP (conform handles lua formatting via stylua CLI)
       vim.lsp.enable("stylua", false)

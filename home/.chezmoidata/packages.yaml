@@ -20,6 +20,8 @@ packages:
       - 'btop'
       - 'gh'
       - 'node'
+      - 'go'
+      - 'rust'
       - 'yazi'
     casks:
       - 'alfred'
