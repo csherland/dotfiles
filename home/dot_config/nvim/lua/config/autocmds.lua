@@ -1,20 +1,30 @@
--- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
---
--- Add any additional autocmds here
--- with `vim.api.nvim_create_autocmd`
---
--- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
--- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+-- Highlight on yank
+autocmd("TextYankPost", {
+  group = augroup("highlight_yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+-- Resize splits when window is resized
+autocmd("VimResized", {
+  group = augroup("resize_splits", { clear = true }),
+  callback = function()
+    vim.cmd("tabdo wincmd =")
+  end,
+})
 
 -- Apply chezmoi on changes
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
-	callback = function(ev)
-		local bufnr = ev.buf
-		local edit_watch = function()
-			require("chezmoi.commands.__edit").watch(bufnr)
-		end
-		vim.schedule(edit_watch)
-	end,
+autocmd({ "BufRead", "BufNewFile" }, {
+  group = augroup("chezmoi_watch", { clear = true }),
+  pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
+  callback = function(ev)
+    local bufnr = ev.buf
+    vim.schedule(function()
+      require("chezmoi.commands.__edit").watch(bufnr)
+    end)
+  end,
 })

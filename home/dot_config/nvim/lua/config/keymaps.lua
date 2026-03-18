@@ -1,20 +1,35 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+local map = vim.keymap.set
 
--- Toggle comments
-vim.keymap.set("n", "<C-Space>", "gcc", { remap = true, desc = "Toggle comment (gcc)" })
-vim.keymap.set("v", "<C-Space>", "gc", { remap = true, desc = "Toggle comment (visual)" })
+-- Window navigation
+map("n", "<C-k>", "<C-w>k", { desc = "Move to window above" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move to window below" })
+map("n", "<C-h>", "<C-w>h", { desc = "Move to window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move to window right" })
+
+-- Clear search highlight
+map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+
+-- Toggle comments (built-in gc/gcc in Neovim 0.10+)
+map("n", "<C-Space>", "gcc", { remap = true, desc = "Toggle comment" })
+map("v", "<C-Space>", "gc", { remap = true, desc = "Toggle comment" })
 
 -- Buffer navigation
-vim.keymap.set("n", "<C-m>", ":bnext<CR>", { remap = true, desc = "Move to next buffer" })
-vim.keymap.set("n", "<C-b>", ":bprev<CR>", { remap = true, desc = "Move to prev buffer" })
-vim.keymap.set("n", "<C-x>", ":bp<CR>:bd #<CR>", { remap = true, desc = "Close buffer without saving" })
-
--- copilot
-vim.keymap.set("n", "<leader>cpd", ":Copilot disable<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>cpe", ":Copilot enable<cr>", { silent = true, noremap = true })
+map("n", "<C-m>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<C-b>", "<cmd>bprev<CR>", { desc = "Previous buffer" })
+map("n", "<C-x>", "<cmd>bp<CR><cmd>bd #<CR>", { desc = "Close buffer" })
 
 -- Keep visual selection when indenting
-vim.keymap.set("x", "<", "<gv", { desc = "Indent left and reselect" })
-vim.keymap.set("x", ">", ">gv", { desc = "Indent right and reselect" })
+map("x", "<", "<gv", { desc = "Indent left and reselect" })
+map("x", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- Move lines up/down in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Keep cursor centered when scrolling
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down centered" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up centered" })
+
+-- Better paste (don't lose register when pasting over selection)
+map("x", "p", [["_dP]], { desc = "Paste without losing register" })
