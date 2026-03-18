@@ -29,7 +29,7 @@ return {
     },
   },
 
-  -- LSP config
+  -- LSP configs (nvim-lspconfig provides lsp/*.lua definitions)
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
@@ -39,7 +39,6 @@ return {
       "saghen/blink.cmp",
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       -- Diagnostic keymaps
@@ -78,8 +77,8 @@ return {
         end,
       })
 
-      -- Server configs
-      lspconfig.lua_ls.setup({
+      -- Server configs via vim.lsp.config (nvim 0.11+)
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -89,9 +88,14 @@ return {
         },
       })
 
-      lspconfig.ts_ls.setup({
+      vim.lsp.config("ts_ls", {
         capabilities = capabilities,
       })
+
+      vim.lsp.enable({ "lua_ls", "ts_ls" })
+
+      -- Disable stylua LSP (conform handles lua formatting via stylua CLI)
+      vim.lsp.enable("stylua", false)
     end,
   },
 }

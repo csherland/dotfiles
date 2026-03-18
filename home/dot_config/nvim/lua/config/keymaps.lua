@@ -19,6 +19,9 @@ map("n", "<C-m>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<C-b>", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 map("n", "<C-x>", "<cmd>bp<CR><cmd>bd #<CR>", { desc = "Close buffer" })
 
+-- Exit visual mode with jk
+map("v", "jk", "<Esc>", { desc = "Exit visual mode" })
+
 -- Keep visual selection when indenting
 map("x", "<", "<gv", { desc = "Indent left and reselect" })
 map("x", ">", ">gv", { desc = "Indent right and reselect" })

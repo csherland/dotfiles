@@ -1,17 +1,28 @@
 {
   "permissions": {
     "allow": [
-<<<<<<< HEAD
       "Bash(ls -d /Users/christiansherland/.local/share/chezmoi/home/dot_config/*/)",
       "Bash(carapace _carapace zsh 2>/dev/null | head -80)",
       "Bash(carapace vim:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Skill(commit-commands:commit-push-pr)",
-      "Bash(git checkout:*)"
-=======
-      "Bash(chezmoi apply:*)"
->>>>>>> 6fdc3a3 (Claude updates?)
+      "Bash(git checkout:*)",
+      "Bash(chezmoi apply:*)",
+      "Bash(which stylua:*)",
+      "Bash(nvim --version 2>&1 | head -3)",
+      "Read(//opt/homebrew/share/nvim/runtime/**)",
+      "Read(//usr/local/share/nvim/runtime/**)",
+      "Read(//opt/homebrew/Cellar/neovim/**)",
+      "Read(//opt/homebrew/**)",
+      "Bash(nvim --cmd \"lua print\\(vim.fn.stdpath\\(''''data''''\\)\\)\" --cmd q)",
+      "Bash(nvim -u NONE --headless -c 'echo $VIMRUNTIME' -c 'q' 2>&1)",
+      "Read(//Users/christiansherland/.local/share/nvim/**)",
+      "Read(//Users/christiansherland/.local/share/nvim/lazy/nvim-lspconfig/lua/lspconfig/configs/**)",
+      "Bash(/Users/christiansherland/.local/share/nvim/mason/packages/stylua/stylua --version 2>&1; /Users/christiansherland/.local/share/nvim/mason/packages/stylua/stylua --lsp 2>&1 | head -5)",
+      "Bash(nvim -u NONE --headless -c 'help lspconfig-nvim-0.11' -c 'lua local lines = vim.api.nvim_buf_get_lines\\(0, 0, 80, false\\); for _, l in ipairs\\(lines\\) do print\\(l\\) end' -c 'q' 2>&1)",
+      "Bash(nvim -u NONE --headless -c 'help vim.lsp.config' -c 'lua local lines = vim.api.nvim_buf_get_lines\\(0, 0, 60, false\\); for _, l in ipairs\\(lines\\) do print\\(l\\) end' -c 'q' 2>&1)",
+      "Bash(nvim -u NONE --headless -c 'help vim.lsp.enable' -c 'lua local lines = vim.api.nvim_buf_get_lines\\(0, 0, 40, false\\); for _, l in ipairs\\(lines\\) do print\\(l\\) end' -c 'q' 2>&1)"
     ]
   }
 }
