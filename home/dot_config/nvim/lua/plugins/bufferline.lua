@@ -4,6 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
+      always_show_bufferline = false,
       close_command = "bdelete! %d",
       diagnostics = "nvim_lsp",
       offsets = {
