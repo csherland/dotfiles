@@ -2,6 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+if vim.g.vscode then
+  require("config.vscode")
+  return
+end
+
 -- Load core config
 require("config.options")
 require("config.keymaps")
