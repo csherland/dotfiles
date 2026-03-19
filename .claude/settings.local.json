@@ -7,7 +7,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Skill(commit-commands:commit-push-pr)"
     ]
   }
 }
