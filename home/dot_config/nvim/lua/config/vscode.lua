@@ -27,6 +27,8 @@ map("n", "<leader>rn", function() vscode.action("editor.action.rename") end, { d
 map("n", "<leader>cf", function() vscode.action("editor.action.formatDocument") end, { desc = "Format document" })
 map("n", "<leader>e", function() vscode.action("workbench.view.explorer") end, { desc = "File explorer" })
 map("n", "<leader>xx", function() vscode.action("workbench.actions.view.problems") end, { desc = "Problems panel" })
+map("n", "<leader>cc", function() vscode.action("editor.action.commentLine") end, { desc = "Toggle comment" })
+map("v", "<leader>cc", function() vscode.action("editor.action.commentLine") end, { desc = "Toggle comment" })
 map("n", "gr", function() vscode.action("editor.action.goToReferences") end, { desc = "Go to references" })
 map("n", "gd", function() vscode.action("editor.action.revealDefinition") end, { desc = "Go to definition" })
 map("n", "gi", function() vscode.action("editor.action.goToImplementation") end, { desc = "Go to implementation" })

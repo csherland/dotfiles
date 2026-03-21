@@ -43,7 +43,6 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		branch = "main",
 		config = function()
-			require("nvim-treesitter-textobjects").init()
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
 					select = {

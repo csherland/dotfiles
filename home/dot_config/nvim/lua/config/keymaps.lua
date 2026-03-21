@@ -13,6 +13,8 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 -- Toggle comments (built-in gc/gcc in Neovim 0.10+)
 map("n", "<C-Space>", "gcc", { remap = true, desc = "Toggle comment" })
 map("v", "<C-Space>", "gc", { remap = true, desc = "Toggle comment" })
+map("n", "<leader>cc", "gcc", { remap = true, desc = "Toggle comment" })
+map("v", "<leader>cc", "gc", { remap = true, desc = "Toggle comment" })
 
 -- Buffer navigation
 map("n", "<C-m>", "<cmd>bnext<CR>", { desc = "Next buffer" })

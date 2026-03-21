@@ -2,21 +2,24 @@ return {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VeryLazy",
-  opts = {
+  opts = function()
+    return {
     options = {
+      separator_style = "slant",
       always_show_bufferline = false,
       close_command = "bdelete! %d",
       diagnostics = "nvim_lsp",
       offsets = {
         {
-          filetype = "minifiles",
+          filetype = "neo-tree",
           text = "File Explorer",
-          highlight = "Directory",
-          text_align = "left",
+          highlight = "Bold",
+          text_align = "center",
         },
       },
     },
-  },
+  }
+  end,
   keys = {
     { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
     { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
