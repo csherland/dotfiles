@@ -38,6 +38,25 @@ return {
         },
         lualine_x = {
           {
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then return "recording @" .. reg end
+              return ""
+            end,
+            color = { fg = "#f38ba8" },
+          },
+          {
+            function()
+              local clients = vim.lsp.get_clients({ bufnr = 0 })
+              if #clients == 0 then return "" end
+              local names = {}
+              for _, c in ipairs(clients) do
+                table.insert(names, c.name)
+              end
+              return " " .. table.concat(names, ", ")
+            end,
+          },
+          {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
             color = { fg = "#ff9e64" },
