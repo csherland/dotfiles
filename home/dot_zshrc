@@ -5,6 +5,7 @@
 
 # Run fastfetch on login shells only to avoid slowing down every split/tab
 if [[ -o login ]] && command -v fastfetch &>/dev/null; then
+  sleep 0.1
   fastfetch
 fi
 

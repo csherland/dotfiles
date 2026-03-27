@@ -30,6 +30,8 @@ packages:
       - 'spotify'
       - 'obsidian'
       - 'discord'
+      - 'notion'
+      - 'telegram'
       - 'firefox'
       - '1password'
       - 'tailscale-app'
