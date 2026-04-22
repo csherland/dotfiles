@@ -19,6 +19,11 @@ brew {{ . | quote }}
 {{ range .packages.darwin.casks -}}
 cask {{ . | quote }}
 {{ end -}}
+{{ if and (hasKey . "personal") .personal -}}
+{{ range .packages.darwin.personal_casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ end -}}
 EOF
 {{ end -}}
 

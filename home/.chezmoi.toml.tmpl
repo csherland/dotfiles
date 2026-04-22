@@ -10,7 +10,9 @@
 
 # {{- $email := promptString "Git email address for the author/committer" }}
 # {{- $name := promptString "Git username for the author/committer" }}
+# {{- $personal := promptBoolOnce . "personal" "Is this a personal machine? (installs personal-only casks like discord, telegram)" false }}
 
 [data]
     email = "{{ $email }}"
     name = "{{ $name }}"
+    personal = {{ $personal }}
