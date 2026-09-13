@@ -3,14 +3,12 @@
 #
 #
 
-theme = catppuccin-mocha.conf
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 font-family = JetBrainsMono Nerd Font
 
 # Initial window size
 window-width  = 160
 window-height = 80
-
-#gtk-titlebar = false
 
 # Quick terminal
 keybind = global:cmd+grave_accent=toggle_quick_terminal
@@ -22,10 +20,11 @@ auto-update = download
 # Disable close confirmation
 confirm-close-surface = false
 
-# Fix ssh
-term=xterm-256color
+# Fix ssh: copy terminfo and env to remote hosts instead of downgrading TERM
+shell-integration-features = ssh-env,ssh-terminfo
 
 background-opacity = 0.9
+background-blur = 20
 
 keybind = shift+enter=text:\x1b\r
 
