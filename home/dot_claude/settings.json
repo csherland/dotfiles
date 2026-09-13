@@ -3,9 +3,7 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "allow": [
-      "WebFetch(*)"
-    ]
+    "allow": ["WebFetch(*)"]
   },
   "model": "opus[1m]",
   "hooks": {
@@ -120,5 +118,6 @@
   "teammateMode": "auto",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
+  "preferredNotifChannel": "auto",
   "editorMode": "vim"
 }
