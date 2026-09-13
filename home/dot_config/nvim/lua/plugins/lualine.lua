@@ -40,7 +40,9 @@ return {
           {
             function()
               local reg = vim.fn.reg_recording()
-              if reg ~= "" then return "recording @" .. reg end
+              if reg ~= "" then
+                return "recording @" .. reg
+              end
               return ""
             end,
             color = { fg = "#f38ba8" },
@@ -48,7 +50,9 @@ return {
           {
             function()
               local clients = vim.lsp.get_clients({ bufnr = 0 })
-              if #clients == 0 then return "" end
+              if #clients == 0 then
+                return ""
+              end
               local names = {}
               for _, c in ipairs(clients) do
                 table.insert(names, c.name)

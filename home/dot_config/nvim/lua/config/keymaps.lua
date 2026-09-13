@@ -1,10 +1,6 @@
 local map = vim.keymap.set
 
--- Window navigation
-map("n", "<C-k>", "<C-w>k", { desc = "Move to window above" })
-map("n", "<C-j>", "<C-w>j", { desc = "Move to window below" })
-map("n", "<C-h>", "<C-w>h", { desc = "Move to window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Move to window right" })
+-- Window navigation: <C-h/j/k/l> are provided by vim-tmux-navigator (see plugins/tmux.lua)
 
 -- Clear search highlight
 map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
@@ -16,14 +12,13 @@ map("v", "<C-Space>", "gc", { remap = true, desc = "Toggle comment" })
 map("n", "<leader>cc", "gcc", { remap = true, desc = "Toggle comment" })
 map("v", "<leader>cc", "gc", { remap = true, desc = "Toggle comment" })
 
--- Buffer navigation
-map("n", "<C-m>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-map("n", "<C-b>", "<cmd>bprev<CR>", { desc = "Previous buffer" })
-map("n", "<C-x>", "<cmd>bp<CR><cmd>bd #<CR>", { desc = "Close buffer" })
+-- Buffer navigation: <S-h>/<S-l> come from bufferline. (<C-m> is Enter, so never map it.)
+map("n", "<C-x>", function()
+  Snacks.bufdelete()
+end, { desc = "Close buffer" })
 
--- Exit insert/visual mode with jj
+-- Exit insert mode with jj (not in visual mode: it would delay every `j` by timeoutlen)
 map("i", "jj", "<Esc>", { desc = "Exit insert mode" })
-map("v", "jj", "<Esc>", { desc = "Exit visual mode" })
 
 -- Keep visual selection when indenting
 map("x", "<", "<gv", { desc = "Indent left and reselect" })

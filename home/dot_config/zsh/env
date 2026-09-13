@@ -2,19 +2,36 @@
 # (PATH, EDITOR, XDG_CONFIG_HOME, ...) live in ~/.zshenv.
 
 # History (fallback — atuin handles history when available)
-HISTSIZE=5000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
+setopt append_history
+setopt share_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
-setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# Directories: bare dir name cd's into it; every cd pushes onto the stack so
+# `cd -<Tab>` offers recent directories
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_silent
+DIRSTACKSIZE=20
+
+# Treat / as a word boundary so Ctrl-W deletes one path segment at a time
+WORDCHARS=${WORDCHARS//\/}
 
 # Colours for completion listings and eza (LS_COLORS is unset on macOS)
 if command -v vivid >/dev/null 2>&1; then
   export LS_COLORS="$(vivid generate catppuccin-mocha)"
 fi
+
+# fzf colours (catppuccin mocha) — shared by fzf, fzf-tab and zoxide's picker
+export FZF_DEFAULT_OPTS="\
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:#45475a \
+--color=border:#6c7086,label:#cdd6f4"

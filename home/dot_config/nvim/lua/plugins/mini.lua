@@ -12,7 +12,6 @@ return {
   {
     "echasnovski/mini.map",
     event = "VeryLazy",
-    opts = {},
     config = function()
       local map = require("mini.map")
       map.setup({
@@ -28,12 +27,15 @@ return {
         local bt = vim.bo.buftype
         local ft = vim.bo.filetype
         local ignored_ft = { "snacks_dashboard", "dashboard", "alpha", "starter", "lazy", "neo-tree" }
-        if bt ~= "" then return false end
+        if bt ~= "" then
+          return false
+        end
         return not vim.tbl_contains(ignored_ft, ft)
       end
 
       -- Open on real files, close on non-file buffers
       vim.api.nvim_create_autocmd("BufEnter", {
+        group = vim.api.nvim_create_augroup("mini_map_auto", { clear = true }),
         callback = function()
           vim.schedule(function()
             if should_show_map() then
@@ -50,7 +52,13 @@ return {
       end
     end,
     keys = {
-      { "<leader>um", function() require("mini.map").toggle() end, desc = "Toggle minimap" },
+      {
+        "<leader>um",
+        function()
+          require("mini.map").toggle()
+        end,
+        desc = "Toggle minimap",
+      },
     },
   },
 }

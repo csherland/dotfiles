@@ -50,17 +50,50 @@ source $HOME/.config/zsh/aliases
 source $HOME/.config/zsh/keybinds
 source $HOME/.config/zsh/env
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
+# Completion behaviour
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu no                      # required by fzf-tab
+zstyle ':completion:*' group-name ''                # group by type so fzf-tab can show/switch groups
+zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:warnings' format $'\e[38;2;243;139;168mNo matches for: %d\e[m'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpath'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' squeeze-slashes true         # foo//bar -> foo/bar
+zstyle ':completion:*' complete-options true        # complete cd's -flags too
+zstyle ':completion:*:(cd|__zoxide_z):*' ignore-parents parent pwd
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+
+# fzf-tab presentation: one picker for every Tab press
+zstyle ':fzf-tab:*' use-fzf-default-opts yes         # inherit FZF_DEFAULT_OPTS colours
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup       # popup inside tmux, inline fzf elsewhere
+zstyle ':fzf-tab:*' popup-min-size 80 12
+zstyle ':fzf-tab:*' popup-pad 30 0                   # room for the preview pane
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' fzf-pad 4
+
+# Previews
+zstyle ':fzf-tab:complete:(cd|__zoxide_z):*' fzf-preview 'eza -1 --color=always --icons $realpath'
+zstyle ':fzf-tab:complete:(ls|eza|l|lt|bat|cat|nvim|vim|cp|mv|rm):*' fzf-preview \
+  '[[ -d $realpath ]] && eza -1 --color=always --icons $realpath || bat --color=always --style=numbers --line-range=:200 $realpath'
+zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff --color=always $word'
+zstyle ':fzf-tab:complete:git-log:*' fzf-preview 'git log --color=always --oneline -20 $word'
+zstyle ':fzf-tab:complete:git-show:*' fzf-preview 'git show --color=always $word'
+zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
+  'case "$group" in "modified file") git diff --color=always $word ;; "recent commit object name") git show --color=always $word ;; *) git log --color=always --oneline -20 $word ;; esac'
+zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word | bat -plman --color=always'
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' fzf-preview 'echo ${(P)word}'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[[ $group == "[process ID]" ]] && ps -p $word -o pid,user,command | tail -n +2'
+
 # Shell integrations
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
+
+# fzf's shell integration rebinds Tab to its own `**`-trigger widget, which
+# silently disables fzf-tab. Re-enable it last so every Tab goes through fzf-tab.
+(( $+functions[enable-fzf-tab] )) && enable-fzf-tab
 
 # Local zshrc for things that shouldn't be in source control
 if [ -f ~/.zshrc.local ]; then

@@ -3,7 +3,7 @@
 #
 #
 
-theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+theme = Catppuccin Mocha
 font-family = JetBrainsMono Nerd Font
 
 # Initial window size

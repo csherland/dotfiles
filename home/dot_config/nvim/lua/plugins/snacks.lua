@@ -28,16 +28,84 @@ return {
     words = { enabled = true },
   },
   keys = {
-    { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification history" },
-    { "<leader>dn", function() Snacks.notifier.hide() end, desc = "Dismiss notifications" },
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log" },
-    { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
-    { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
-    { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
-    { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-    { "<leader>bD", function() Snacks.bufdelete.other() end, desc = "Delete Other Buffers" },
+    {
+      "<leader>n",
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = "Notification history",
+    },
+    {
+      "<leader>dn",
+      function()
+        Snacks.notifier.hide()
+      end,
+      desc = "Dismiss notifications",
+    },
+    {
+      "<leader>gg",
+      function()
+        Snacks.lazygit()
+      end,
+      desc = "Lazygit",
+    },
+    {
+      "<leader>gl",
+      function()
+        Snacks.lazygit.log()
+      end,
+      desc = "Lazygit Log",
+    },
+    {
+      "<leader>gB",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Git Browse",
+    },
+    {
+      "<c-/>",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Toggle Terminal",
+    },
+    {
+      "<c-_>",
+      function()
+        Snacks.terminal()
+      end,
+      desc = "Toggle Terminal (tmux sends <c-/> as <c-_>)",
+    },
+    {
+      "]]",
+      function()
+        Snacks.words.jump(vim.v.count1)
+      end,
+      desc = "Next Reference",
+      mode = { "n", "t" },
+    },
+    {
+      "[[",
+      function()
+        Snacks.words.jump(-vim.v.count1)
+      end,
+      desc = "Prev Reference",
+      mode = { "n", "t" },
+    },
+    {
+      "<leader>bd",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "Delete Buffer",
+    },
+    {
+      "<leader>bD",
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = "Delete Other Buffers",
+    },
   },
 }

@@ -7,10 +7,11 @@ return {
     spec = {
       {
         mode = { "n", "x" },
+        { "<leader>b", group = "buffer" },
         { "<leader>f", group = "find" },
         { "<leader>c", group = "code" },
         { "<leader>g", group = "git" },
-        { "<leader>gh", group = "hunks" },
+        { "<leader>q", group = "session" },
         { "<leader>r", group = "refactor" },
         { "<leader>d", group = "diagnostics/dismiss" },
         { "<leader>s", group = "search" },
@@ -24,7 +25,19 @@ return {
     },
   },
   keys = {
-    { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps" },
-    { "<c-w><space>", function() require("which-key").show({ keys = "<c-w>", loop = true }) end, desc = "Window Hydra Mode" },
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Keymaps",
+    },
+    {
+      "<c-w><space>",
+      function()
+        require("which-key").show({ keys = "<c-w>", loop = true })
+      end,
+      desc = "Window Hydra Mode",
+    },
   },
 }
