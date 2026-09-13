@@ -116,8 +116,9 @@
   },
   "effortLevel": "high",
   "tui": "fullscreen",
-  "theme": "dark-ansi",
+  "theme": "custom:catppuccin-mocha",
   "teammateMode": "auto",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "editorMode": "vim"
 }

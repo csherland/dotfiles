@@ -28,7 +28,6 @@ packages:
       - "jq"
       - "direnv"
       - "git-delta"
-      - "xcodegen"
     casks:
       - "alfred"
       - "ghostty"

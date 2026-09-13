@@ -23,9 +23,6 @@ confirm-close-surface = false
 # Fix ssh: copy terminfo and env to remote hosts instead of downgrading TERM
 shell-integration-features = ssh-env,ssh-terminfo
 
-background-opacity = 0.9
-background-blur = 20
-
 keybind = shift+enter=text:\x1b\r
 
 macos-option-as-alt = true
