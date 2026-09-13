@@ -1,11 +1,5 @@
-# Use nvim as editor if installed
-if command -v nvim >/dev/null 2>&1; then
-  export EDITOR=nvim
-  export VISUAL=nvim
-else
-  export EDITOR=vim 
-  export VISUAL=vim 
-fi
+# Interactive-only shell settings. Exports that scripts also need
+# (PATH, EDITOR, XDG_CONFIG_HOME, ...) live in ~/.zshenv.
 
 # History (fallback — atuin handles history when available)
 HISTSIZE=5000
@@ -20,8 +14,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Use ~/.config/colima instead of ~/.colima
-export COLIMA_HOME="$HOME/.config/colima"
-
-# Add .local/bin to path
-export PATH="$HOME/.local/bin:$PATH"
+# Colours for completion listings and eza (LS_COLORS is unset on macOS)
+if command -v vivid >/dev/null 2>&1; then
+  export LS_COLORS="$(vivid generate catppuccin-mocha)"
+fi

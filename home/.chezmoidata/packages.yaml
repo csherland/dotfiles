@@ -23,6 +23,7 @@ packages:
       - "go"
       - "rust"
       - "yazi"
+      - "vivid"
     casks:
       - "alfred"
       - "ghostty"

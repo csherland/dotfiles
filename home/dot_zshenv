@@ -1,0 +1,24 @@
+#
+# .zshenv
+#   Sourced by every zsh, interactive or not. Keep it to exports that
+#   scripts and editor-spawned shells also need; everything interactive
+#   belongs in .zshrc.
+#
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Use nvim as editor if installed
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR=nvim
+  export VISUAL=nvim
+else
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
+# Use ~/.config/colima instead of ~/.colima
+export COLIMA_HOME="$HOME/.config/colima"
+
+# Add .local/bin to path (typeset -U keeps nested shells from adding duplicates)
+typeset -U path
+path=("$HOME/.local/bin" $path)
