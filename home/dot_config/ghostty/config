@@ -1,18 +1,14 @@
 #
 # Ghostty config
 #
-#
 
+# Theme
 theme = Catppuccin Mocha
 font-family = JetBrainsMono Nerd Font
 
 # Initial window size
 window-width  = 160
 window-height = 80
-
-# Quick terminal
-keybind = global:cmd+grave_accent=toggle_quick_terminal
-quick-terminal-position = right
 
 # Auto-update (automatically download)
 auto-update = download
@@ -23,6 +19,8 @@ confirm-close-surface = false
 # Fix ssh: copy terminfo and env to remote hosts instead of downgrading TERM
 shell-integration-features = ssh-env,ssh-terminfo
 
-keybind = shift+enter=text:\x1b\r
-
+# MacOS
 macos-option-as-alt = true
+
+# Desktop desktop-notifications
+desktop-notifications = true
