@@ -1,10 +1,10 @@
 # Atuin - shell history
 
 ## Search UX
-style = "full"
-inline_height = 30
+style = "compact"
+inline_height = 20
 show_preview = true
-show_help = true
+show_help = false
 show_tabs = false
 time_format = ""
 
@@ -26,3 +26,18 @@ keymap_mode = "vim-normal"
 
 ## Disable sync
 sync_frequency = "0"
+
+## Theme file lives in ~/.config/atuin/themes/
+## Render the search in a tmux popup (same size as the fzf-tab popup).
+## Falls back to the inline UI outside tmux.
+[tmux]
+enabled = true
+width = "90"
+height = "20"
+
+[ui]
+## Drop the duration column; time + command is enough
+columns = ["time", "command"]
+
+[theme]
+name = "catppuccin-mocha"

@@ -7,7 +7,7 @@
       "WebFetch(*)"
     ]
   },
-  "model": "fable[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -41,8 +41,8 @@
   },
   "effortLevel": "high",
   "tui": "fullscreen",
+  "theme": "dark-ansi",
   "teammateMode": "auto",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
-  "theme": "dark-ansi"
+  "agentPushNotifEnabled": true
 }

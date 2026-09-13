@@ -15,7 +15,6 @@ packages:
       - "bat"
       - "zoxide"
       - "sesh"
-      - "tmux-fingers"
       - "starship"
       - "atuin"
       - "chezmoi"

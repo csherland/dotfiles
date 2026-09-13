@@ -38,3 +38,13 @@ alias gp='git push'
 alias ..="cd .."
 alias cl='clear'
 
+
+# tmux: bare `tmux` attaches to the most recent session when one exists, instead of
+# creating another. Any arguments (ls, new -s foo, kill-server) pass straight through.
+tmux() {
+  if [[ $# -eq 0 && -z "$TMUX" ]] && command tmux has-session 2>/dev/null; then
+    command tmux attach
+  else
+    command tmux "$@"
+  fi
+}

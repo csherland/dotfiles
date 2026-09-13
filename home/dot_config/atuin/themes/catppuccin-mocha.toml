@@ -1,0 +1,13 @@
+# Atuin theme: catppuccin mocha, matching starship, fzf and tmux.
+[theme]
+name = "catppuccin-mocha"
+
+[colors]
+AlertInfo  = "#a6e3a1"   # green
+AlertWarn  = "#f9e2af"   # yellow
+AlertError = "#f38ba8"   # red
+Annotation = "#6c7086"   # overlay0 — timestamps, counts
+Base       = "#cdd6f4"   # text
+Guidance   = "#89b4fa"   # blue — hints
+Important  = "#cba6f7"   # mauve — selection / emphasis
+Title      = "#cba6f7"   # mauve

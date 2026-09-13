@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # Key palette: fuzzy-search all prefix bindings that carry a -N note, run the chosen one.
-# Usage: keys.sh <client-name>   (bound to prefix + ? via display-popup)
+# Usage: keys.sh   (bound to prefix + ? via display-popup)
+#
+# The client is resolved here, not passed in: display-popup does not expand #{...}
+# in its command string. Inside a popup this resolves to the client that opened it.
 
 set -eu
 
-client="$1"
+client=$(tmux display -p '#{client_name}')
 prefix=$(tmux show -gv prefix)
 
 selected=$(tmux list-keys -N -T prefix \

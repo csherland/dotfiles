@@ -1,0 +1,18 @@
+#!/bin/sh
+# fzf-tab preview for a path: directory listing, highlighted text, or a
+# one-line description for binaries. fzf exports FZF_PREVIEW_COLUMNS so the
+# description wraps to the pane.
+p="$1"
+cols="${FZF_PREVIEW_COLUMNS:-80}"
+
+if [ -d "$p" ]; then
+  eza -1 --color=always --icons=always -- "$p"
+elif [ -f "$p" ]; then
+  if [ ! -s "$p" ] || grep -qI '' -- "$p"; then
+    bat --color=always --style=numbers --line-range=:200 -- "$p"
+  else
+    file --brief -- "$p" | fold -s -w "$cols"
+  fi
+else
+  printf '%s\n' "$p"
+fi

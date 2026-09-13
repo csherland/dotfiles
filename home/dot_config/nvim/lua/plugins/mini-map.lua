@@ -1,16 +1,7 @@
+-- Minimap (not part of LazyVim). mini.pairs / mini.surround come from LazyVim.
 return {
   {
-    "echasnovski/mini.pairs",
-    event = "InsertEnter",
-    opts = {},
-  },
-  {
-    "echasnovski/mini.surround",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
-    "echasnovski/mini.map",
+    "nvim-mini/mini.map",
     event = "VeryLazy",
     config = function()
       local map = require("mini.map")

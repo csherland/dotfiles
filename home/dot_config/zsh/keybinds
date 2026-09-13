@@ -1,3 +1,4 @@
-# Keybindings (atuin may rebind these — check `bindkey '^p'` if they stop working)
+# Keybindings. Sourced at the end of .zshrc, after fzf/zoxide/atuin, so nothing
+# rebinds these afterwards. Ctrl-R and Up are atuin's.
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward

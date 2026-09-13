@@ -23,15 +23,26 @@ DIRSTACKSIZE=20
 # Treat / as a word boundary so Ctrl-W deletes one path segment at a time
 WORDCHARS=${WORDCHARS//\/}
 
+# atuin renders its search in a tmux popup (size set by [tmux] in its config).
+# Set this explicitly: when the popup is enabled atuin's init exports nothing,
+# so a stale "false" inherited from an older shell or the tmux server would
+# silently keep the popup off.
+export ATUIN_TMUX_POPUP=true
+
 # Colours for completion listings and eza (LS_COLORS is unset on macOS)
 if command -v vivid >/dev/null 2>&1; then
   export LS_COLORS="$(vivid generate catppuccin-mocha)"
 fi
 
-# fzf colours (catppuccin mocha) — shared by fzf, fzf-tab and zoxide's picker
+# fzf look (catppuccin mocha) — shared by fzf, fzf-tab and zoxide's picker.
+# bg:-1 keeps the terminal's (transparent) background;
+# gutter:-1 drops the grey column left of the list; the preview gets a thin
+# left divider instead of a full box and hides its scroll counter.
 export FZF_DEFAULT_OPTS="\
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--layout=reverse --info=inline-right --no-separator \
+--preview-window=right,55%,border-left,noinfo \
+--color=bg+:#313244,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---color=selected-bg:#45475a \
+--color=selected-bg:#45475a,gutter:-1 \
 --color=border:#6c7086,label:#cdd6f4"

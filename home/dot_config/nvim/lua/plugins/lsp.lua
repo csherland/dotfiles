@@ -1,92 +1,17 @@
+-- Servers not covered by a LazyVim lang extra. lua_ls, vtsls, jsonls, yamlls,
+-- pyright/ruff, gopls, rust_analyzer and dockerls come from the extras in lazy.lua.
 return {
-  -- Lua/Neovim dev: completions for vim.* API
-  {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-      },
-    },
-  },
-
-  -- Mason: manage LSP servers, linters, formatters
-  {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
-    opts = {},
-  },
-
-  -- Bridge mason with lspconfig
-  {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = {
-        "lua_ls",
-        "vtsls",
-        "bashls",
-        "jsonls",
-        "yamlls",
-        "html",
-        "cssls",
-        "pyright",
-        "gopls",
-        "rust_analyzer",
-        "dockerls",
-      },
-    },
-  },
-
-  -- LSP configs (nvim-lspconfig provides lsp/*.lua definitions)
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "saghen/blink.cmp",
+    opts = {
+      servers = {
+        bashls = {},
+        html = {},
+        cssls = {},
+      },
     },
-    config = function()
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-      -- Diagnostic keymaps ([d / ]d are built in since 0.10)
-      vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostic" })
-
-      -- LSP keymaps (set on attach)
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("lsp_attach", { clear = true }),
-        callback = function(event)
-          local buf = event.buf
-          local map = function(mode, lhs, rhs, desc)
-            vim.keymap.set(mode, lhs, rhs, { buffer = buf, desc = desc })
-          end
-
-          map("n", "gd", vim.lsp.buf.definition, "Go to definition")
-          map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
-          map("n", "gr", vim.lsp.buf.references, "Show references")
-          map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
-          map("n", "K", vim.lsp.buf.hover, "Hover docs")
-          -- rename handled by inc-rename.nvim
-          map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
-          map("n", "<leader>D", vim.lsp.buf.type_definition, "Type definition")
-        end,
-      })
-
-      -- Server configs via vim.lsp.config (nvim 0.11+). "*" applies to every server;
-      -- mason-lspconfig auto-enables everything in ensure_installed.
-      vim.lsp.config("*", { capabilities = capabilities })
-      vim.lsp.config("lua_ls", {
-        settings = {
-          Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-          },
-        },
-      })
-
-      -- Disable stylua LSP (conform handles lua formatting via stylua CLI)
-      vim.lsp.enable("stylua", false)
-    end,
   },
+
+  -- nvim-treesitter (main) needs the tree-sitter CLI to build parsers; LazyVim's health check wants it too
+  { "mason-org/mason.nvim", opts = { ensure_installed = { "tree-sitter-cli" } } },
 }

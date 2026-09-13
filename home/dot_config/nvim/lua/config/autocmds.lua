@@ -1,30 +1,4 @@
-local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup
-
--- Highlight on yank
-autocmd("TextYankPost", {
-  group = augroup("highlight_yank", { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
-
--- Resize splits when window is resized
-autocmd("VimResized", {
-  group = augroup("resize_splits", { clear = true }),
-  callback = function()
-    vim.cmd("tabdo wincmd =")
-  end,
-})
-
--- Apply chezmoi on changes
-autocmd({ "BufRead", "BufNewFile" }, {
-  group = augroup("chezmoi_watch", { clear = true }),
-  pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
-  callback = function(ev)
-    local bufnr = ev.buf
-    vim.schedule(function()
-      require("chezmoi.commands.__edit").watch(bufnr)
-    end)
-  end,
-})
+-- Autocmds are loaded on VeryLazy. LazyVim's defaults (highlight on yank, resize
+-- splits, restore cursor, close-with-q, auto-mkdir on save, spell/wrap for text
+-- filetypes, checktime on focus) live in lazyvim/config/autocmds.lua.
+-- The chezmoi apply-on-save watcher comes from the util.chezmoi extra.
