@@ -39,10 +39,26 @@
     # Speed up commands involving untracked files such as `git status`.
     # See https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
+    # Syntax-highlighting diff pager.
+    pager = delta
 
 [diff]
     # List submodules commits in the range.
     submodule = log
+    # Highlight moved lines differently from added/removed ones.
+    colorMoved = default
+[interactive]
+    # Let delta colour `git add -p` too.
+    diffFilter = delta --color-only
+[delta]
+    # n/N jumps between files in a diff.
+    navigate = true
+    line-numbers = true
+    # Matches the bat/starship/fzf theme.
+    syntax-theme = "Catppuccin Mocha"
+[merge]
+    # Show the original text as well as both sides of a conflict.
+    conflictstyle = zdiff3
 
 [fetch]
     # Remove any remote-tracking references that no longer exist on the remote.

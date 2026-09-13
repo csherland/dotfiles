@@ -25,6 +25,10 @@ packages:
       - "rust"
       - "yazi"
       - "vivid"
+      - "jq"
+      - "direnv"
+      - "git-delta"
+      - "xcodegen"
     casks:
       - "alfred"
       - "ghostty"
