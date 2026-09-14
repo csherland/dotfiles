@@ -48,3 +48,11 @@ tmux() {
     command tmux "$@"
   fi
 }
+
+# et speaks its own protocol and never reads ~/.ssh/config, so the `SetEnv TERM`
+# that normalizes ssh doesn't apply -- it forwards TERM=xterm-ghostty verbatim and
+# remote tmux dies with "open terminal failed: missing or unsuitable terminal".
+# Send a TERM every host already has terminfo for; local TERM stays untouched.
+et() {
+  TERM=xterm-256color command et "$@"
+}

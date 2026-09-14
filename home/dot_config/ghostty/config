@@ -16,10 +16,11 @@ auto-update = download
 # Disable close confirmation
 confirm-close-surface = false
 
-# TERM normalization for ssh lives in ~/.ssh/config (SetEnv under Host *), which
-# is the one boundary every path crosses -- tmux panes, nvim :term, and scripts
-# never inherit a `term =` set here. Keep the native TERM locally so nvim gets
-# undercurl; ssh-env still forwards COLORTERM=truecolor.
+# Keep the native TERM locally so nvim gets undercurl; ssh-env still forwards
+# COLORTERM=truecolor. TERM is normalized per-transport instead, because no single
+# boundary covers everything: ssh via `SetEnv TERM` in ~/.ssh/config (Host *), and
+# et via the wrapper in ~/.config/zsh/aliases (et ignores ssh_config entirely).
+# Any new remote tool needs its own downgrade, or remote tmux will refuse the TERM.
 shell-integration-features = ssh-env
 
 # MacOS
