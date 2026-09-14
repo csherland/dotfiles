@@ -16,8 +16,11 @@ auto-update = download
 # Disable close confirmation
 confirm-close-surface = false
 
-# Fix ssh: copy terminfo and env to remote hosts instead of downgrading TERM
-shell-integration-features = ssh-env,ssh-terminfo
+# Fix ssh: remote hosts don't ship xterm-ghostty terminfo, and ssh-terminfo only
+# fires from shells Ghostty spawned directly (not tmux panes, nvim :term, scripts).
+# Send a TERM everything already knows; ssh-env still forwards COLORTERM=truecolor.
+term = xterm-256color
+shell-integration-features = ssh-env
 
 # MacOS
 macos-option-as-alt = true
