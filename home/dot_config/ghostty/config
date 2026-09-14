@@ -16,10 +16,10 @@ auto-update = download
 # Disable close confirmation
 confirm-close-surface = false
 
-# Fix ssh: remote hosts don't ship xterm-ghostty terminfo, and ssh-terminfo only
-# fires from shells Ghostty spawned directly (not tmux panes, nvim :term, scripts).
-# Send a TERM everything already knows; ssh-env still forwards COLORTERM=truecolor.
-term = xterm-256color
+# TERM normalization for ssh lives in ~/.ssh/config (SetEnv under Host *), which
+# is the one boundary every path crosses -- tmux panes, nvim :term, and scripts
+# never inherit a `term =` set here. Keep the native TERM locally so nvim gets
+# undercurl; ssh-env still forwards COLORTERM=truecolor.
 shell-integration-features = ssh-env
 
 # MacOS
